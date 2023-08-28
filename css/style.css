@@ -159,6 +159,7 @@ section{
 
 .footer{
     display:list-item;
+    list-style-type: none;
     background:var(--transparent-white);
     backdrop-filter:blur(.9rem);
     border-top: var(--border);

@@ -81,7 +81,7 @@ include("include/db_connect.php");
         ?>
 
 
-        <section>
+        <section class="logging">
         
             <div class="login-box" >
                 <form action="#" method="POST">

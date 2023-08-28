@@ -94,7 +94,7 @@ $existUser = false;
         }
         ?>
         
-        <section>
+        <section class="logging">
             <div class="login-box">
                 <form action="#" method="POST">
                     <h2>SignUp</h2>
