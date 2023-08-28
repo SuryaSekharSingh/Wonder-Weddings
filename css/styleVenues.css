@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap");
+:root{
+    --white:#fff;
+    --pure-black:#000;
+    --black:rgb(80, 79, 80);
+    --blue:rgb(0, 87, 183);
+    --red:rgb(182, 21, 0);
+   
+    --transparent-white:rgba(255,255,255,.3);
+    --transparent-black:rgba(0,0,0,.6);
+    --border:.2rem solid var(--pure-black);
+    --box-shadow: .5rem .5rem .5rem rgba(0,0,0,0.2);
+    --box-shadow-ultra: 1rem 1rem 1rem rgba(0,0,0,0.2);
+    --box-shadow-hover: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    --box-shadow-service: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    /* --box-shadow-service: rgb(38, 57, 77) 0px 20px 30px -10px; */
+    /* --card-width: 200px;
+    --card-height: 300px;
+    --card-transition-duration: 800ms;
+    --card-transition-easing: ease; */
+    --brownish:rgb(173, 150, 80);
+    /* Fonts */
+    --font-title: "Montserrat", sans-serif;
+    --font-text: "Lato", sans-serif;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.venues .info{
+    background-color: var(--transparent-white);
+    backdrop-filter: blur(1rem);
+    border-radius: 2rem;
+    box-shadow: var(--box-shadow);
+    text-align:center;
+    display:block;    
+}
+.venues.info h3,.info h3{
+    padding:2rem;
+    padding-bottom: 1rem;
+    text-transform: capitalize;
+    /* font-weight: 800; */
+    /* transition: .2s linear; */
+    font-size: 4.5rem;
+    color:var(--blue);
+}
+
+.venues .info .terms-list{
+    width:50%;
+    margin:auto;
+    text-align: left;
+}
+
+.venues .info p,.info p{
+    padding:0 2rem;
+    padding-bottom: 2rem;
+    font-size: 1.5rem;
+    width:90%;
+    margin:auto;
+    margin-top:1.5rem;
+    margin-bottom: 2rem;
+    line-height: 3.5rem;
+    font-style:normal;
+    font-weight: 600;
+    color:var(--black);
+}
+
+.venues .info .p-main{
+    font-size: 2rem;
+    color:var(--red);
+    width:80%;
+    font-family: 'Frank Ruhl Libre','','Poppins';
+    font-style: italic;
+}
+
+/* .info h3:hover{
+    transform: scale(1.01,1.01);
+} */
+
+.locations{
+    /* box-shadow: var(--box-shadow); */
+    text-align:center;
+    display:block;
+}
+
+.locations h3{
+    padding:2rem;
+    padding-bottom: 1rem;
+    text-transform: capitalize;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color:var(--blue);
+    transition: .2s linear;
+}
+
+.locations h3:hover{
+    transform: scale(1.01,1.01);
+}
+
+/* pricing page css  */
+.packages {
+    /* background-color: var(--transparent-white); */
+    /* box-shadow: var(--box-shadow); */
+    border-radius: 2rem;
+    margin:1rem 1rem 5rem;
+}
+
+.packages .info{
+    /* backdrop-filter: blur(1rem); */
+    text-align:center;
+    display:block;
+    margin-bottom: 6rem;
+}
+
+/* .packages .info h3{
+    text-transform: uppercase;
+} */
+
+.packages .box-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem , 1fr));
+    gap:2.5rem;
+    margin:auto 5rem;
+}
+
+.packages .box{
+    background-color: var(--transparent-white);
+    backdrop-filter: blur(1rem);
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+}
+
+.packages .box h3{
+    text-transform: uppercase;
+    text-align: center;
+    color:var(--pure-black);
+    font-size:2.8rem;
+    font-weight: 900;
+    /* margin:1rem auto; */
+    margin-top: 1.5rem;
+    
+}
+
+.packages .box .price{
+    text-align: center;
+    font-size:3.5rem;
+    padding:1rem;
+    background-color: var(--red);
+    /* opacity:.8; */
+    color:var(--white);
+    margin:1.5rem auto;
+}
+
+.packages .box .list{
+    min-height: 40rem;
+}
+
+.packages .box .list p{
+    text-align: left;
+    text-transform: capitalize;
+    color:var(--pure-black);
+    font-size: 1.6rem;
+    margin-left: 4.5rem;
+    line-height: 1.5;
+}
+
+.packages .box .list p i{
+    color:var(--red);
+    padding-right: .5rem;
+    font-size:1.7rem;
+}
+
+.packages .box a{
+    margin:1rem auto 1.5rem;
+    margin-left: 4.5rem;
+    
+}
+
+.reviews{
+    margin-bottom: 5rem;
+}
+.reviews .info {
+    margin-bottom: 6rem;
+}
+
+.reviews .info h3{
+    color:var(--blue);
+    text-align: center;
+}
+
+.reviews .slide{
+    margin-bottom: 3rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    padding:2rem;
+    width:30rem;
+    background: var(--transparent-white);
+    backdrop-filter: blur(1rem);
+}
+
+.reviews .slide img{
+    border-radius: 50%;
+    height:7rem;
+    width:7rem;
+    margin-bottom: .5rem;
+}
+
+.reviews .slide h3{
+    font-size: 2.2rem;
+    color:var(--pure-black);
+    text-transform: capitalize;
+}
+
+.reviews .slide p{
+    font-size:1.5rem;
+    color:var(--pure-black);
+    line-height: 2;
+    padding:1rem 0;
+}
+
+.reviews .slide .stars{
+    margin-top: .5rem;
+}
+
+.reviews .slide .stars i{
+    font-size: 1.7rem;
+    color:var(--red);
+}
+
+/* about page css  */
+.about {
+    text-align: center;
+    width:70%;
+    margin:auto;
+    margin-bottom: 5rem;
+}
+
+.about .image{
+    max-width: 60rem;
+    margin:0 auto;
+    
+}
+
+.about .image img{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.about .info{
+    background-color: var(--transparent-white);
+    backdrop-filter: blur(1rem);
+    border-radius: 2rem;
+    /* box-shadow: var(--box-shadow-ultra); */
+    box-shadow: var(--box-shadow-hover);
+}
+.about .info h3{
+    font-size: 4.5rem;
+    text-transform: capitalize;
+    color:var(--blue);
+}
+
+.about .info p{
+    margin-top:1rem;
+    font-size:1.5rem;
+    color:var(--pure-black);
+    padding:1rem 0;
+    line-height: 2;
+}
+
+.about .info a{
+    margin-bottom: 2rem;
+}
+/* 
+.team{
+    margin-bottom: 5rem;
+} */
+
+.team h3{
+    text-align: center;
+    font-size: 4.5rem;
+    color:var(--blue);
+    text-transform: capitalize;
+}
+.team .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem, 1fr));
+    gap:1.5rem;
+    width:70%;
+    margin:auto;
+    margin-bottom: 5rem;
+}
+
+.team .box-container .box{
+    border-radius: 1.5rem;
+    text-align: center;
+    background: var(--transparent-white);
+    padding:2rem;
+    box-shadow: var(--box-shadow);
+    transition: .3s ease-in-out;
+}
+
+.team .box-container .box:hover{
+    position:relative;
+    top:-.5rem;
+    box-shadow: var(--box-shadow-hover);
+}
+.team .box-container .box img{
+    border-radius: 50%;
+    height:15rem;
+    width:15rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.team .box-container .box h3{
+    font-size: 2.2rem;
+    font-weight: 600;
+    color:var(--pure-black);
+    text-transform: capitalize;
+}
+
+.team .box-container .box p{
+    /* margin:.5rem 0; */
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    color:var(--red);
+    font-weight: 600;
+}
+
+.team .box-container .box .share{
+    margin-top: .5rem;
+}
+
+.team .box-container .box .share a{
+    height:4rem;
+    width:4rem;
+    line-height: 4rem;
+    background: var(--pure-black);
+    color:var(--white);
+    font-size:1.8rem;
+    text-decoration: none;
+    border-radius: .5rem;
+    margin: .5rem 0;    
+}
+
+.team .box-container .box .share a:hover{
+    background: var(--red);
+    transform:scale(1.1);
+    transition: .2s linear;
+}
+
+
+
+
+
+
+.card .image{
+    overflow:hidden;
+}
+
+.card .image img{
+    object-fit: cover !important;
+    transition:.2s linear !important;
+}
+
+.card:hover img{
+    transform:scale(1.05) !important;
+    /* box-shadow: var(--box-shadow-ultra); */
+}
+.card-body .card-title{
+    font-family: 'Poppins' , 'Frank Ruhl Libre' !important;
+    font-size:2.3rem !important;
+    text-align: center;
+    margin:.5rem auto;
+    font-weight: 900;
+    text-transform:uppercase;
+    color:var(--red);
+}

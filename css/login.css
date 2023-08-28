@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+:root{
+    --white:#fff;
+    --black:rgb(80, 79, 80);
+    --pure-black:#000;
+    /* --blue:rgb(24, 24, 227); */
+    --blue:rgb(0, 87, 183);
+    --red:rgb(182, 21, 0);
+    --transparent-white:rgba(255,255,255,.3);
+    --transparent-black:rgba(0,0,0,.6);
+    --border:.2rem solid var(--pure-black);
+    --box-shadow: .5rem .5rem .5rem rgba(0,0,0,0.2);
+    --box-shadow-hover: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    --brownish:rgb(173, 150, 80);
+    --green:rgb(21, 115, 71);
+    
+}
+
+/* body{
+    background: url('../images/wedding-background5.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+} */
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    /* background: url('../images/wedding-background5.jpg') no-repeat; */
+    /* background-size: cover;
+    background-position: center; */
+}
+.login-box{
+    position: relative;
+    width: 45rem;
+    /* height: 50rem;    */
+    background:transparent;
+    /* border: 2px solid rgba(20, 1, 15, 0.5); */
+    border:var(--border);
+    border-radius: 1.5rem;
+    box-shadow: var(--box-shadow-hover);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(1rem);
+}
+
+
+
+.login-box h2{
+    margin-top: 5rem;
+    font-size: 3.2rem;
+    color: var(--red);
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+}
+.input-box{
+    position: relative;
+    width: 35rem;
+    margin: 30px 0;
+    border-bottom: 2px solid var(--white);
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1.7rem;
+    color: var(--pure-black);
+    font-weight: 300;
+    transition:.2s linear;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top:-5px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color:var(--pure-black);
+    padding: 0 35px 0 5px;
+}
+
+.input-box input:focus{
+    outline:none;
+    box-shadow: 0 .2rem 0 0 var(--red);
+    border-color:var(--red);
+}
+
+.input-box input:focus + label
+, .input-box input:not(:placeholder-shown) + label
+{
+    font-weight: 600;
+    color: initial;
+}
+
+.input-box .icon{
+    position: absolute;
+    right:8px;
+    color:var(--red);
+    font-size: 1.8rem;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    margin: -15px 0 15px;
+    font-size: .9em;
+    color:var(--red);
+    font-weight:900;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input{
+    margin-right: 3px;
+}
+
+.remember-forgot a{
+    color: var(--red);
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+button{
+    width: 100%;
+    height: 4.2rem;
+    /* background: rgb(249, 16, 144); */
+    background: var(--red);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--pure-black);
+    font-weight: 900;
+}
+
+.signup-link{
+    font-size: 1rem;
+    color: var(--pure-black);
+    font-weight: 900;
+    text-align: center;
+    margin: 25px 0 10px;
+    margin-bottom:5rem;
+}
+
+.signup-link p a{
+    color: var(--red);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: .4rem;
+}
+
+.signup-link p a :hover{
+    text-decoration: underline;
+}
