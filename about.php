@@ -31,7 +31,10 @@
             <div class="info">
                 <h3>about us</h3>
                 <div class="title-dash" style="width:10rem;"></div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vero est aliquid mollitia voluptas, blanditiis officiis. Repudiandae corporis officiis amet, tenetur sint, magnam quae nemo consectetur ullam facilis tempore provident modi eligendi veniam porro dolorum illum ea recusandae consequatur fugiat.</p>
+                <p>We wedding planners are professionals who assist couples in planning and organizing their wedding. A wedding can be a complicated affair, and having a wedding planner can help alleviate some of the stress and ensure everything runs smoothly on the big day.
+                We as wedding planners have planned few wonderful weddings which were highly liked by our clients. That makes us a good group to work with on special occasions like this one. <br> 
+                We are active at multiple venues in various cities across <i>India</i>. We have a group of highly skilled decorators, chefs, makeup artists, entertainers, and a lot more which makes our services greatly appreciatable by the clients.
+                </p>
                 <a href="contact.php" class="button">contact us</a>
             </div>
 

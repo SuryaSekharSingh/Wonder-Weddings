@@ -11,19 +11,33 @@
 </head>
 
 <body class="body">
-    
-    <?php include("include/header.php"); ?>
 
-    <div class="container">
-        <div class="contents">
-            <a href="dashboard.php" style="margin-top:2rem;">dashboard</a>
-            <a href="edit.php">edit</a>
-            <a href="dashboard.php">dashboard</a>
-            <a href="dashboard.php">dashboard</a>
-        </div>
-        <div class="display">
+    <div class="login">
+        <form action="#" method="POST">
+            <h2> admin Login</h2>
+            <div class="input-box">
+                <span class="icon">
+                    <i class="fas fa-envelope"> </i>
+                </span>
+                <input type="text" name="email" required>
+                <label>Email</label>
+            </div>
 
-        </div>
+            <div class="input-box">
+                <span class="icon">
+                    <i class="fas fa-lock"> </i>
+                </span>
+                <input type="password" name="pass" required>
+                <label>Password</label>
+            </div>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit">Login</button>
+            
+        </form>
     </div>
 
     <?php  include("../include/body_links.php");?>

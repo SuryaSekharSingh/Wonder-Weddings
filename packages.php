@@ -1,3 +1,13 @@
+<?php 
+    include("include/db_connect.php");
+    $res = mysqli_query($conn,"select plan,price from pricing");
+    $price = array();
+    while($row = mysqli_fetch_assoc($res)){
+        $price[$row['plan']] = $row['price'];
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,68 +36,58 @@
             <div class="box-container">
                 <div class="box">
                     <h3>basic plan</h3>
-                    <div class="price">₹2,00,000/-</div>
+                    <div class="price">₹<?=$price['basic']?>/-</div>
                     <div class="list">
-                        <p><i class="fas fa-check"></i> photography</p>
-                        <p><i class="fas fa-check"></i> decorations</p>
-                        <p><i class="fas fa-check"></i> wedding</p>
-                        <p><i class="fas fa-check"></i> dining</p>
+                        <?php
+                            $result = mysqli_query($conn,"select services from packages where id=1");
+                            while($rows = mysqli_fetch_assoc($result)){
+                                echo '<p><i class="fas fa-check"></i> ' . $rows['services'] . '</p>';
+                            }
+                        ?>
                     </div>
                     <a href="" class="button">Choose plan</a>
                 </div>
 
                 <div class="box">
                     <h3>premium plan</h3>
-                    <div class="price">₹4,50,000/-</div>
+                    <div class="price">₹<?=$price['premium']?>/-</div>
                     <div class="list">
-                        <p><i class="fas fa-check"></i> photography</p>
-                        <p><i class="fas fa-check"></i> decorations</p>
-                        <p><i class="fas fa-check"></i> wedding</p>
-                        <p><i class="fas fa-check"></i> dining</p>
-                        <p><i class="fas fa-check"></i> stays</p>
-                        <p><i class="fas fa-check"></i> sangeet</p>
+                        <?php
+                            $result = mysqli_query($conn,"select services from packages where id=2");
+                            while($rows = mysqli_fetch_assoc($result)){
+                                echo '<p><i class="fas fa-check"></i> ' . $rows['services'] . '</p>';
+                            }
+                        ?>
                     </div>
-                    <a href="contact.php" class="button">choose plan</a>
+                    <a href="" class="button">choose plan</a>
                 </div>
 
                 <div class="box">
                     <h3>ultimate plan</h3>
-                    <div class="price">₹9,00,000/-</div>
+                    <div class="price">₹<?=$price['ultimate']?>/-</div>
                     <div class="list">
-                        <p><i class="fas fa-check"></i> photography</p>
-                        <p><i class="fas fa-check"></i> decorations</p>
-                        <p><i class="fas fa-check"></i> wedding</p>
-                        <p><i class="fas fa-check"></i> dining</p>
-                        <p><i class="fas fa-check"></i> stays</p>
-                        <p><i class="fas fa-check"></i> designer invitations</p>
-                        <p><i class="fas fa-check"></i> sangeet</p>
-                        <p><i class="fas fa-check"></i> bridal care</p>
+                        <?php
+                            $result = mysqli_query($conn,"select services from packages where id=3");
+                            while($rows = mysqli_fetch_assoc($result)){
+                                echo '<p><i class="fas fa-check"></i> ' . $rows['services'] . '</p>';
+                            }
+                        ?>
                     </div>
-                    <a href="contact.php" class="button">choose plan</a>
+                    <a href="" class="button">choose plan</a>
                 </div>
 
                 <div class="box">
                     <h3>absolute plan</h3>
-                    <div class="price">₹20,00,000/-</div>
+                    <div class="price">₹<?=$price['absolute']?>/-</div>
                     <div class="list">
-                        <p><i class="fas fa-check"></i> photography</p>
-                        <p><i class="fas fa-check"></i> decorations</p>
-                        <p><i class="fas fa-check"></i> wedding</p>
-                        <p><i class="fas fa-check"></i> dining</p>
-                        <p><i class="fas fa-check"></i> stays</p>
-                        <p><i class="fas fa-check"></i> travels & logistics</p>
-                        <p><i class="fas fa-check"></i> sangeet</p>
-                        <!-- <p><i class="fas fa-check"></i> gallery</p> -->
-                        <p><i class="fas fa-check"></i> bridal care</p>
-                        <p><i class="fas fa-check"></i> vip management</p>
-                        <!-- <p><i class="fas fa-check"></i> destination management</p> -->
-                        <p><i class="fas fa-check"></i> bachelor's party</p>
-                        <p><i class="fas fa-check"></i> bachelorette's party</p>
-                        <!-- <p><i class="fas fa-check"></i> events</p> -->
-                        <p><i class="fas fa-check"></i> live streaming</p>
-                        <!-- <p><i class="fas fa-check"></i> honeymoon package</p> -->
+                        <?php
+                            $result = mysqli_query($conn,"select services from packages where id=4");
+                            while($rows = mysqli_fetch_assoc($result)){
+                                echo '<p><i class="fas fa-check"></i> ' . $rows['services'] . '</p>';
+                            }
+                        ?>
                     </div>
-                    <a href="contact.php" class="button">choose plan</a>
+                    <a href="" class="button">choose plan</a>
                 </div>
 
             </div>
