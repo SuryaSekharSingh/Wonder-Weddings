@@ -1,7 +1,6 @@
 <?php
     include("../include/db_connect.php");
-    // $id;
-    // $service;
+
     if(isset($_GET['remove']) && isset($_GET['service'])){
         $id = $_GET['remove'];
         $service = $_GET['service'];
@@ -32,11 +31,12 @@
         $result = mysqli_query($conn,$sql);
     }
 
-    // if(isset($_POST['edit1'])){
-    //     $input = $_POST['price'];
-    //     $sql = "update pricing set price = $input where id=1";
-    //     $result = mysqli_query($conn,$sql);
-    // }
+    if(isset($GET['updatePrice'])){
+        $input = $_GET['updatePrice'];
+        $id = $_GET['id'];
+        $sql = "update pricing set price = $input where id=$id";
+        $result = mysqli_query($conn,$sql);
+    }
 
     $price = array();
     $query = "select * from pricing";
@@ -74,6 +74,7 @@
                         <h4>₹<?=$price['basic']?>/- </h4>
                         <input type="text" name="price" placeholder="Enter new price" class="price-input" style="display:none;margin-bottom:1rem;" />
                         <button class="button edit" name="edit1" id="1">edit</button>
+                        <button class="button update" name="edit1" id="1" style="display:none;margin:auto;margin-top:.3rem;">update</button>
                     </div>
                     
                     <table>
@@ -108,6 +109,7 @@
                         <h4>₹<?=$price['premium']?>/- </h4>
                         <input type="text" name="basic-price"   placeholder="Enter new price" class="price-input" style="display:none;margin-bottom:1rem;" />
                         <button class="button edit" name="edit" id="2">edit</button>
+                        <button class="button update" name="edit2" id="2" style="display:none;margin:auto;margin-top:.3rem;">update</button>
                     </div>
                     
                     <table>
@@ -142,6 +144,7 @@
                         <h4>₹<?=$price['ultimate']?>/- </h4>
                         <input type="text" name="basic-price" placeholder="Enter new price" class="price-input" style="display:none;margin-bottom:1rem;" />
                         <button class="button edit" name="edit" id="3">edit</button>
+                        <button class="button update" name="edit3" id="3" style="display:none;margin:auto;margin-top:.3rem;">update</button>
                     </div>
                     
                     <table>
@@ -176,6 +179,7 @@
                         <h4>₹<?=$price['absolute']?>/- </h4>
                         <input type="text" name="basic-price"   placeholder="Enter new price" class="price-input" style="display:none;margin-bottom:1rem;" />
                         <button class="button edit" name="edit" id="4">edit</button>
+                        <button class="button update" name="edit4" id="4" style="display:none;margin:auto;margin-top:.3rem;">update</button>
                     </div>
                     
                     <table>
@@ -226,7 +230,7 @@
             var service = e.target.parentNode.parentNode.getElementsByTagName("td")[0].innerText.split(" ");
             // console.log(itemId,service[0]);
             if(confirm("Are you sure you want to delete this service!")){
-                window.location = `/pro/admin/pricing.php?remove=${itemId}&service=${service[0]}`;
+                window.location = `/pro/admin/packages.php?remove=${itemId}&service=${service[0]}`;
             }
             else {
                 console.log("NO");
@@ -235,29 +239,35 @@
         })
 
         var edits = document.getElementsByClassName('edit');
+        var updates = document.getElementsByClassName('update');
 
         Array.from(edits).forEach((element) =>{
             element.addEventListener("click", (e)=>{
                 changeDisplay(e);
                 var temp = e.target.parentNode.getElementsByTagName("h4")[0].innerText;
-                e.target.innerText = "update";
-                e.target.classList.remove("edit");
-                e.target.classList.add("update");
+                e.target.style.display = "none";
+                e.target.parentNode.getElementsByTagName("button")[1].style.display = "block";
                 
             })
         })
 
-        var updates = document.getElementsByClassName('update');
 
         Array.from(updates).forEach((element) =>{
-            console.log("hello");
             element.addEventListener("click", (e) =>{
                 let price = e.target.parentNode.querySelector("h4");
-                let input = e.target.parentNode.querySelector(".price .price-input").innerText;
+                let input = e.target.parentNode.querySelector(".price .price-input").value;
                 let id = e.target.id;
                 console.log(input,id);
                 price.style.display = "block";
-                e.target.parentNode.querySelector(".price .price-input").style.display = "none";
+                e.target.parentNode.getElementsByClassName("price-input").style.display = "none";
+                e.target.style.display = "none";
+                e.target.parentNode.getElementsByTagName("button")[0].style.display = "block";
+                // if(confirm(`The price will be updated to ${input}! Continue ?`)){
+                //     window.location = `/pro/admin/packages.php?updatePrice=${input}&id=${id}`;
+                // }
+                // else {
+                //     console.log("NO");
+                // }
             })
         })
     </script>
