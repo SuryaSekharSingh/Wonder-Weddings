@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 28, 2023 at 12:00 PM
+-- Generation Time: Oct 12, 2023 at 07:53 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -20,6 +20,46 @@ SET time_zone = "+00:00";
 --
 -- Database: `wedding`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `con_db`
+--
+
+CREATE TABLE `con_db` (
+  `Fname` varchar(50) NOT NULL,
+  `Lname` varchar(50) NOT NULL,
+  `Email` varchar(50) NOT NULL,
+  `Phone` varchar(50) NOT NULL,
+  `Address` varchar(500) NOT NULL,
+  `Message` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `con_db`
+--
+
+INSERT INTO `con_db` (`Fname`, `Lname`, `Email`, `Phone`, `Address`, `Message`) VALUES
+('prakash ', 'saha', 'prakashsaha77634@gmail.com', '9879546546', 'gudu\r\nghgjh\r\ndkfgk', 'gpdgdi[\r\ndfgdg\r\n'),
+('', '', '', '', '', ''),
+('Surya Sekhar ', 'Singh', 'suryasekharsingh00@gmail.com', '8825238173', 'Kalitalla Barharwa Jharkhand', 'Just testing the system...'),
+('', '', '', '', '', ''),
+('', '', '', '', '', ''),
+('', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -90,7 +130,6 @@ INSERT INTO `halls` (`id`, `hall`) VALUES
 (3, 'Hyatt  Regency - Kolkata'),
 (4, 'Snow Valley Resorts - Shimla'),
 (4, 'Welcome Heritage Elysium Resort & Spa'),
-(4, 'Koti Resorts'),
 (4, 'Wildflower Hall, An Oberoi Resort - Shimla'),
 (4, 'Viceregal Lodge & Indian institute of Advance Study'),
 (5, 'The Taj Mahal Palace - South Mumbai'),
@@ -107,7 +146,77 @@ INSERT INTO `halls` (`id`, `hall`) VALUES
 (7, 'Fairmont  Hotel'),
 (7, 'Marriott Hotel'),
 (7, 'Radison Blue - Jaipur'),
-(7, 'Hotel Diggi Palace');
+(7, 'Hotel Diggi Palace'),
+(4, 'Koti Resorts');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `packages`
+--
+
+CREATE TABLE `packages` (
+  `id` tinyint(4) DEFAULT NULL,
+  `services` varchar(40) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `packages`
+--
+
+INSERT INTO `packages` (`id`, `services`) VALUES
+(1, 'Photography'),
+(1, 'Decorations'),
+(1, 'Wedding'),
+(1, 'Dining'),
+(2, 'Photography'),
+(2, 'Decorations'),
+(2, 'Wedding'),
+(2, 'Dining'),
+(2, 'Stays'),
+(2, 'Sangeet'),
+(3, 'Photography'),
+(3, 'Decorations'),
+(3, 'Wedding'),
+(3, 'Dining'),
+(3, 'Stays'),
+(3, 'Designer Invitations'),
+(3, 'Sangeet'),
+(3, 'Bridal Care'),
+(4, 'Photography'),
+(4, 'Decorations'),
+(4, 'Wedding'),
+(4, 'Dining'),
+(4, 'Stays'),
+(4, 'Travels & Logistics'),
+(4, 'Sangeet'),
+(4, 'Bridal Care'),
+(4, 'VIP Management'),
+(4, 'Bachelor\'s Party'),
+(4, 'Bachelorette\'s Party'),
+(4, 'Live Streaming');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pricing`
+--
+
+CREATE TABLE `pricing` (
+  `id` tinyint(4) NOT NULL,
+  `plan` varchar(30) NOT NULL,
+  `price` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `pricing`
+--
+
+INSERT INTO `pricing` (`id`, `plan`, `price`) VALUES
+(1, 'basic', '2,00,000'),
+(2, 'premium', '4,50,000'),
+(3, 'ultimate', '9,00,000'),
+(4, 'absolute', '20,00,000');
 
 -- --------------------------------------------------------
 
@@ -172,7 +281,11 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `contact`, `email`, `password`, `join_date`) VALUES
 (1, 'SURYA SEKHAR SINGH', '8825238173', 'suryasekharsingh00@gmail.com', '$2y$10$srVwTdRmoVOU5zFRhSOEf.EF6neGDur42rtxv4T0kI4oPXnFr6Dam', '0000-00-00 00:00:00'),
 (2, 'SURYA SEKHAR', '8825238172', 'surya2001sekhar@gmail.com', '$2y$10$BoHV5JBZXwKmbK6NhpRot.bX616O42fkh9IZ78aFR7PnikQ3ZxPe6', '0000-00-00 00:00:00'),
-(3, 'Tanmay', '7481045754', 'tanmay@gmail.com', '$2y$10$WUjuoe3cPtdgxdjd/PUn/eO1j.D7dSyEo1xS0auVnHfozZyr0T4NC', '0000-00-00 00:00:00');
+(3, 'Tanmay', '7481045754', 'tanmay@gmail.com', '$2y$10$WUjuoe3cPtdgxdjd/PUn/eO1j.D7dSyEo1xS0auVnHfozZyr0T4NC', '0000-00-00 00:00:00'),
+(4, 'Tommy Shelby', '9876598765', 'tom_shelby1918@gmail.com', '$2y$10$uuY06Eu6EfnoMhKJyEOq2uLKXGaMFjgLJsTYE/C/mojhPNjDs96DG', '0000-00-00 00:00:00'),
+(5, 'Tom Ellis', '9999999999', 'OGlucifer@gmail.com', '$2y$10$tySfjqybtLEzin8D/32CJeMrRZehlYjmOfUJnLfrzSNbCTgYMhBw2', '0000-00-00 00:00:00'),
+(6, 'hola', '1234567890', 'hola@gmail.com', '$2y$10$N2EMO31DAyGpU8fgt97PQuUA0K9nAuCVBeWF8wRCIDXrqIHwbvsOi', '0000-00-00 00:00:00'),
+(7, 'Heavy Driver', '0000000000', 'heavydriver24@gmail.com', '$2y$10$DZjrK3kuH.7cd2alDcQzO.kvlGgCiKt3rf0VYmWPvuyGibs5e6r/u', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -203,6 +316,12 @@ INSERT INTO `venue` (`id`, `city`) VALUES
 --
 
 --
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `faq`
 --
 ALTER TABLE `faq`
@@ -219,6 +338,18 @@ ALTER TABLE `gallery`
 --
 ALTER TABLE `halls`
   ADD KEY `id` (`id`);
+
+--
+-- Indexes for table `packages`
+--
+ALTER TABLE `packages`
+  ADD KEY `id` (`id`);
+
+--
+-- Indexes for table `pricing`
+--
+ALTER TABLE `pricing`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `reviews`
@@ -249,6 +380,12 @@ ALTER TABLE `venue`
 --
 
 --
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `faq`
 --
 ALTER TABLE `faq`
@@ -259,6 +396,12 @@ ALTER TABLE `faq`
 --
 ALTER TABLE `gallery`
   MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pricing`
+--
+ALTER TABLE `pricing`
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `reviews`
@@ -276,13 +419,13 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `venue`
 --
 ALTER TABLE `venue`
-  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
@@ -294,6 +437,12 @@ ALTER TABLE `venue`
 ALTER TABLE `halls`
   ADD CONSTRAINT `halls_ibfk_1` FOREIGN KEY (`id`) REFERENCES `venue` (`id`),
   ADD CONSTRAINT `halls_ibfk_2` FOREIGN KEY (`id`) REFERENCES `venue` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `packages`
+--
+ALTER TABLE `packages`
+  ADD CONSTRAINT `packages_ibfk_1` FOREIGN KEY (`id`) REFERENCES `pricing` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
