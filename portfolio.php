@@ -79,7 +79,7 @@
 
 
 
-    <script src="js/portfolio.js"></script>
+    <!-- <script src="js/portfolio.js"></script> -->
     <?php  include("include/body_links.php");?>
 
 </body>
