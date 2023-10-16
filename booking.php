@@ -104,7 +104,7 @@
                             <div class="cal-col"></div>
                             <div class="cal-col"></div>
                         </div>
-                        <!-- <div class="cal-row">
+                <!--   <div class="cal-row">
                             <div class="cal-col"></div>
                             <div class="cal-col"></div>
                             <div class="cal-col"></div>

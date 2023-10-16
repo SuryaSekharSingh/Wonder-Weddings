@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="swiper-slide slide"
-                        style="background: url(images/home-slider/home-slide-4.jpg) no-repeat;">
+                        style="background: url(images/home-slider/home-slide-4.webp) no-repeat;">
                         <div class="content">
                             <h3>plan your wedding!</h3>
                             <p>Make your dream destination wedding a reality with an experienced crew at Planned
@@ -70,7 +70,7 @@
                     </div>
 
                     <div class="swiper-slide slide"
-                        style="background: url(images/home-slider/home-slide-5.jpg) no-repeat;">
+                        style="background: url(images/home-slider/home-slide-5.webp) no-repeat;">
                         <div class="content">
                             <h3>plan your wedding!</h3>
                             <p>Make your dream destination wedding a reality with an experienced crew at Planned
