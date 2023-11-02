@@ -21,10 +21,12 @@
         --black: rgb(80, 79, 80);
         --blue:rgb(0, 87, 183);
         --red:rgb(182, 21, 0);
+        --header-blue:rgb(22, 40, 60);
         --transparent-white:rgba(255,255,255,.3);
         --transparent-black:rgba(0,0,0,.6);
         --border:.1rem solid var(--black);
         --box-shadow: .5rem .5rem .5rem rgba(0,0,0,0.2);
+        --box-shadow-ultra: 1rem 1rem 1rem rgba(0,0,0,0.2);
         --brownish:rgb(173, 150, 80);
         --green:rgb(21, 115, 71);
         
@@ -69,12 +71,20 @@
     }
     .dashboard{
         background:linear-gradient(to bottom right, rgb(24, 38, 8), rgb(32,65,98));
-        width:20rem;
+        position:fixed;
+        top:0;
+        left:0;
+        width:20%;
         /* height:100vh; */
-        min-height: 100vh;
-
+        height: 100vh;
+        /* overflow-y: hidden; */
     }
-
+    .online-status{
+        background-color: green;
+        width:1rem;
+        height:1rem;
+        border-radius: 50%;
+    }
     .profile{
         background-color: rgb(32,65,98);
         padding:1rem;
@@ -123,6 +133,7 @@
     }
 
     .admin-section{
+        margin-left: 20%;
         width:80%;
         min-height: 100vh;
         /* overflow-y: scroll; */
@@ -132,7 +143,7 @@
         display:flex;
         justify-content: space-between;
         /* background:linear-gradient(to bottom right, rgb(24, 38, 8), rgb(32,65,98)); */
-        background-color: rgb(22, 40, 60);
+        background-color: var(--header-blue);
     }
 
     .header .logo img{
@@ -186,7 +197,9 @@
         height:12rem;
         border-radius: 1.5rem;
         padding-top: 2rem;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;;
+        /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;; */
+        /* box-shadow: var(--box-shadow-ultra); */
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     }
     .dashboard-body .box:hover div{
         transform: scale(1.1);
@@ -267,37 +280,92 @@
 
 
     /* users page css  */
-    .user-body table{
-        border:.1rem solid brown;
-        margin:auto;
+    .user-body{
         margin-top: 1rem;
+    }
+    .user-body .table{
+        /* border:.2rem solid brown; */
+        border-top: .1rem solid var(--pure-black);
+        border-radius: .5rem;
+        margin:auto;
         box-shadow: var(--box-shadow);
     }
-    .user-body table th{
-        padding:.5rem 2rem;
-        border:.1rem solid black;
+    .user-body .table th{
         text-align: center;
         text-transform: uppercase;
-        font-size: 1.3rem;
+        font-size: 1rem;
+        border-bottom: .1rem solid var(--pure-black);
     }
-    .user-body table td{
-        text-align: center;
-        border:.1rem solid black;
-        padding: .2rem .5rem;
-    }
-    .user-body table td #button{
+    .user-body .table td{
+        font-size: .9rem;
+    } 
+    .user-body .table td #button{
         text-transform: capitalize;
         color:var(--pure-black);
     }
-    .user-body table td #button:hover{
+    .user-body .table td #button:hover{
         color:var(--white);
     }
 
 
 
 
+    /* booking page css   */
+    .booking-body{
+        margin-top: 1rem;
 
-    /* pricing page css  */
+    }
+    .booking-body .table{
+        border-top: .1rem solid var(--pure-black);
+        border-radius: .5rem;
+        margin:auto;
+        box-shadow: var(--box-shadow);
+    }
+    .booking-body .table th{
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: .8rem;
+        border-bottom: .1rem solid var(--pure-black);
+    }
+    .booking-body .table td{
+        font-size: .75rem;
+        font-weight: 600;
+    }
+
+
+
+/* payments page css  */
+    .payment-body{
+        margin-top: 1rem;
+
+    }
+    .payment-body .table{
+        border-top: .1rem solid var(--pure-black);
+        border-radius: .5rem;
+        margin:auto;
+        box-shadow: var(--box-shadow);
+    }
+    .payment-body .table th{
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: .9rem;
+        border-bottom: .1rem solid var(--pure-black);
+    }
+    .payment-body .table td{
+        font-size:.9rem;
+    }
+    .payment-body .table td .button{
+        font-size: .7rem;
+    }
+
+
+
+
+
+
+    /* packages page css  */
     .package-body{
         padding: 2rem 5rem;
         display:grid;

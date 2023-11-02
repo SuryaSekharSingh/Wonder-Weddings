@@ -14,12 +14,12 @@
     <title>Welcome</title>
 
 
-    
+
 </head>
 
 <body class="body">
     <div class="container">
-        
+
         <?php 
             include("include/header.php");
             
@@ -85,40 +85,47 @@
                 <div class="swiper-pagination"></div>
             </div>
 
-        <div class="info">
-            <h3>out-of-this-world weddings</h3>
-            <div class="title-dash"></div>
-            <p>Ever dreamed of exchanging vows on a sun-kissed private beach, or hosting your reception at exquisite
-                venues? With a choice of opulent ballrooms, breathtaking outdoor venues and iconic settings to say ‘I
-                do’, Planned Weddings brings your dream wedding to life. Menus from world-class chefs, contemporary
-                accommodation options for your guests, and a host of luxury extras make this one of India's finest and
-                most sought-after wedding destination. Getting married in India has never been more carefree. Let our
-                team of dedicated wedding specialists take care of every detail, so you can enjoy the most important day
-                of your life.</p>
-        </div>
+            <div class="info">
+                <h3>out-of-this-world weddings</h3>
+                <div class="title-dash"></div>
+                <p>Ever dreamed of exchanging vows on a sun-kissed private beach, or hosting your reception at exquisite
+                    venues? With a choice of opulent ballrooms, breathtaking outdoor venues and iconic settings to say
+                    ‘I
+                    do’, Planned Weddings brings your dream wedding to life. Menus from world-class chefs, contemporary
+                    accommodation options for your guests, and a host of luxury extras make this one of India's finest
+                    and
+                    most sought-after wedding destination. Getting married in India has never been more carefree. Let
+                    our
+                    team of dedicated wedding specialists take care of every detail, so you can enjoy the most important
+                    day
+                    of your life.</p>
+            </div>
 
-        <div class="info" style="margin-bottom: 10rem;">
-            <h3>The Perfect Venue</h3>
-            <div class="title-dash" style="width:25rem;"></div>
-            <p>From bespoke celebrations for 10 people to show-stopping weddings for 2,000 guests, Planned Weddings
-                offers incredible venues for your big day. All you need to do is choose the type and place of the kind
-                of wedding you like the most and we will cover you the best way possible.</p>
+            <div class="info" style="margin-bottom: 10rem;">
+                <h3>The Perfect Venue</h3>
+                <div class="title-dash" style="width:25rem;"></div>
+                <p>From bespoke celebrations for 10 people to show-stopping weddings for 2,000 guests, Planned Weddings
+                    offers incredible venues for your big day. All you need to do is choose the type and place of the
+                    kind
+                    of wedding you like the most and we will cover you the best way possible.</p>
 
-            <div class="venue-home">
-                <div class="swiper-slide slide"
-                    style="background:url(images/venue-home-main.jpg) no-repeat;width:90%;margin:auto;display:flex;border-radius:1.5rem;">
-                    <div class="div-left" style="margin-left: -50%;margin-top: 10rem;">
-                        <div class="content" style="width:55rem;">
-                            <h3 style="padding:1rem;padding-bottom:.5rem;font-size:3.2rem;">Plan your dream wedding</h3>
-                            <p style="margin-top:0;">Contact our team of dedicated wedding specialists for a tailored proposal.</p>
-                            <a href="venues.php" class="button">Explore Venues</a>
+                <div class="venue-home">
+                    <div class="swiper-slide slide"
+                        style="background:url(images/venue-home-main.jpg) no-repeat;width:90%;margin:auto;display:flex;border-radius:1.5rem;">
+                        <div class="div-left" style="margin-left: -50%;margin-top: 10rem;">
+                            <div class="content" style="width:55rem;">
+                                <h3 style="padding:1rem;padding-bottom:.5rem;font-size:3.2rem;">Plan your dream wedding
+                                </h3>
+                                <p style="margin-top:0;">Contact our team of dedicated wedding specialists for a
+                                    tailored proposal.</p>
+                                <a href="venues.php" class="button">Explore Venues</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+
             </div>
-
-
-        </div>
         </section>
 
 
@@ -271,7 +278,8 @@
                         <img src="images/types/hindu-wedding.jpg" alt="">
                         <div class="content">
                             <h3>hindu wedding</h3>
-                            <p>Embark on a journey of love with us on Wonder Weddings for an unforgettable celebration.</p>
+                            <p>Embark on a journey of love with us on Wonder Weddings for an unforgettable celebration.
+                            </p>
                             <a href="portfolio.php" class="button">our portfolio</a>
                         </div>
                     </div>
@@ -280,7 +288,8 @@
                         <img src="images/types/muslim-wedding.jpg" alt="">
                         <div class="content">
                             <h3>muslim wedding</h3>
-                            <p>Embark on a journey of love with us on Wonder Weddings for an unforgettable celebration.</p>
+                            <p>Embark on a journey of love with us on Wonder Weddings for an unforgettable celebration.
+                            </p>
                             <a href="portfolio.php" class="button">our portfolio</a>
                         </div>
                     </div>
@@ -289,7 +298,8 @@
                         <img src="images/types/christian-wedding.jpg" alt="">
                         <div class="content">
                             <h3>christian wedding</h3>
-                            <p>Embark on a journey of love with us on Wonder Weddings for an unforgettable celebration.</p>
+                            <p>Embark on a journey of love with us on Wonder Weddings for an unforgettable celebration.
+                            </p>
                             <a href="portfolio.php" class="button">our portfolio</a>
                         </div>
                     </div>
@@ -299,7 +309,8 @@
                         <img src="images/types/sikh-wedding.jpg" alt="">
                         <div class="content">
                             <h3>sikh wedding</h3>
-                            <p>Embark on a journey of love with us on Wonder Weddings for an unforgettable celebration.</p>
+                            <p>Embark on a journey of love with us on Wonder Weddings for an unforgettable celebration.
+                            </p>
                             <a href="portfolio.php" class="button">our portfolio</a>
                         </div>
                     </div>
@@ -318,78 +329,78 @@
 
     <?php include("include/body_links.php");?>
 
-<script> 
-var swiper = new Swiper(".home-slider", {
-    loop:true,
-    spaceBetween:20,
-    speed:1500,
-    effect:'fade',
-    autoplay: {
-        delay: 3500,
-      },
-    grabCursor:true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable:true,
-      dynamicBullets: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-});
-
-var swiper = new Swiper(".service-slider", {
-    loop:true,
-    spaceBetween:30,
-    autoplay:{
-      delay:3500,
-    },
-    grabCursor:true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable:true,
-    },
-    breakpoints: {
-      450: {
-      slidesPerView:1,
-      },
-      768: {
-      slidesPerView: 2,
-      },
-      1000: {
-        slidesPerView: 3,
+    <script>
+    var swiper = new Swiper(".home-slider", {
+        loop: true,
+        spaceBetween: 20,
+        speed: 1500,
+        effect: 'fade',
+        autoplay: {
+            delay: 3500,
         },
-      // 1200: {
-      //   slidesPerView: 4,
-      //   },
-    },
-});
+        grabCursor: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
 
-var swiper = new Swiper(".portfolio-slider", {
-  loop:true,
-  spaceBetween:30,
-  autoplay:{
-    delay:3500,
-  },
-  grabCursor:true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable:true,
-  },
-  breakpoints: {
-    450: {
-    slidesPerView:1,
-    },
-    768: {
-    slidesPerView: 2,
-    },
-    1000: {
-      slidesPerView: 3,
-    },
-  },
-});
-</script>
+    var swiper = new Swiper(".service-slider", {
+        loop: true,
+        spaceBetween: 30,
+        autoplay: {
+            delay: 3500,
+        },
+        grabCursor: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            450: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1000: {
+                slidesPerView: 3,
+            },
+            // 1200: {
+            //   slidesPerView: 4,
+            //   },
+        },
+    });
+
+    var swiper = new Swiper(".portfolio-slider", {
+        loop: true,
+        spaceBetween: 30,
+        autoplay: {
+            delay: 3500,
+        },
+        grabCursor: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            450: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1000: {
+                slidesPerView: 3,
+            },
+        },
+    });
+    </script>
 </body>
 
 </html>

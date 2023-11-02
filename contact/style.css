@@ -1,0 +1,113 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+ *, ::after, ::before{
+    box-sizing: border-box;
+ }
+ :root{
+    --pink:#ef5777;
+    --white:#fff;
+    --black:#222;
+    --transparent-white:rgba(255,255,255,.4);
+    --transparent-black:rgba(255,255,255,.3);
+    --border:.2rem solid var(--black);
+    --box-shadow: 0.5rem 1.5rem rgba(0,0,0,0.1);
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background: url("../images/home-slider/home-slide-4.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.container{
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    width: 1000px;
+    height: 800px;
+    background: transparent;
+    /* border: 2px solid black; */
+    background-color: rgba(140, 138, 138, 0.642);
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    
+}
+.contact-us-head{
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 78px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+.contact-us-description{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: center;
+    max-width: 518px;
+    margin:41px auto 51px auto;
+    color: var(--black);
+}
+.First-last-wrap{
+    display: flex;
+    justify-content: space-between;
+
+}
+.First-last-wrap .input-box{
+    width: 100%;
+    margin: 0px;
+    
+
+
+}
+.First-last-wrap .input-box:First-child{
+    margin-right: 14px;
+}
+.input-box{
+    margin-top: 19px;
+}
+form{
+    max-width: 839px;
+    margin: auto;
+}
+input, textarea{
+    border: 1px solid black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 100%;
+    padding: 10px 20px;
+    background: var(--transparent-white);
+}
+label{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 10px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:var(--black);
+    font-weight: bold;
+}
+.btn-wrap{
+    text-align: left;
+    margin-top: 20px;
+}
+.btn-wrap button{
+    width: 168px;
+    border-radius: 5px;
+    padding: 10px 32px 10px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: center;
+    background: var(--transparent-white);
+    color: var(--black);
+    border: 1px solid;
+   
+}
+.input-box section{
+    width: 100%;
+}

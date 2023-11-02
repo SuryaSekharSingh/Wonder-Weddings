@@ -3,7 +3,7 @@
 
     <div class="profile">
         <img src="../images/user.png" alt="">
-        <p>Surya Sekhar Singh</p>
+        <p><span class="online-status"></span><?=$_SESSION['AdminLoginId']?></p>
     </div>
     <div class="title">
         <p>General</p>
@@ -38,15 +38,15 @@
         <a href="payments.php">Payments</a>
     </div>
 
-    <div class="contents">
+    <!-- <div class="contents">
         <span style="padding-left:2.3rem;"><i class="fa-solid fa-receipt" style="color:rgb(255, 102, 0);"></i></span>
         <a href="accounts.php">accounts</a>
-    </div>
+    </div> -->
 
-    <div class="contents">
+    <!-- <div class="contents">
         <span style="padding-left:2.3rem;"><i class="fa-solid fa-comment" style="color:rgb(2, 179, 25);"></i></span>
         <a href="reviews.php">Reviews</a>
-    </div>
+    </div> -->
 
 </div>
         

@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+    if(!isset($_SESSION['AdminLoginId'])){
+        header("location:index.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,15 +51,15 @@
                     <a href="payments.php">Payments</a>
                 </div>
 
-                <div class="box">
+                <!-- <div class="box">
                     <div><i class="fa-solid fa-receipt" style="color:rgb(255, 102, 0);"></i></div>
                     <a href="accounts.php">accounts</a>
-                </div>
+                </div> -->
 
-                <div class="box">
+                <!-- <div class="box">
                     <div><i class="fa-solid fa-comment" style="color:rgb(2, 179, 25);"></i></div>
                     <a href="reviews.php">reviews</a>
-                </div>
+                </div> -->
             </div>
 
         </section>

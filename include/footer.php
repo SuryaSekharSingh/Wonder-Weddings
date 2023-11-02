@@ -50,11 +50,11 @@
 
             <div class="box">
                 <h3>follow us</h3>
-                <a href="#"> <i class="fab fa-instagram"> </i> instagram</a>
-                <a href="#"> <i class="fab fa-facebook"> </i> facebook</a>
-                <a href="#"> <i class="fab fa-linkedin"> </i> linkedin</a>
-                <a href="#"> <i class="fab fa-twitter"> </i> twitter</a>
-                <a href="#"> <i class="fab fa-github"> </i> github</a>
+                <a href="https://www.instagram.com/" target="_blank"> <i class="fab fa-instagram"> </i> instagram</a>
+                <a href="https://www.facebook.com/"target="_blank"> <i class="fab fa-facebook"> </i> facebook</a>
+                <a href="https://www.in.linkedin.com/" target="_blank"> <i class="fab fa-linkedin"> </i> linkedin</a>
+                <a href="https://www.twitter.com" target="_blank"> <i class="fab fa-twitter"> </i> twitter</a>
+                <a href="https://github.com/SuryaSekharSingh/Wonder-Weddings" target="_blank"> <i class="fab fa-github"> </i> github</a>
             </div>
         </div>
     

@@ -1,6 +1,9 @@
 <?php
     include("../include/db_connect.php");
-
+    session_start();
+    if(!isset($_SESSION['AdminLoginId'])){
+        header("location:index.php");
+    }
     if(isset($_GET['remove']) && isset($_GET['service'])){
         $id = $_GET['remove'];
         $service = $_GET['service'];
@@ -42,7 +45,8 @@
     $query = "select * from pricing";
     $result = mysqli_query($conn,$query);
     while($row = mysqli_fetch_assoc($result)){
-        $price[$row['plan']] = $row['price'];
+        $price[$row['plan']] = preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $row['price']);
+
     }
 
 ?>
@@ -53,7 +57,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destinations</title>
+    <title>Packages</title>
     <?php include("include/head_links.php"); ?>
 
 </head>

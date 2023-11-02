@@ -1,5 +1,9 @@
 <?php
     include("../include/db_connect.php");  
+    session_start();
+    if(!isset($_SESSION['AdminLoginId'])){
+        header("location:index.php");
+    }
     $exist = false;
     $success = false;
     $remove = false;
@@ -135,7 +139,6 @@
                     while($rows = mysqli_fetch_assoc($res)){
                         $hall = $rows['hall'];
 
-                        // echo '<li style="margin-left:4rem">'. $hall .'</li>';
                         echo '<tr>
                                 <td>' . $hall . '</td>
                                 <td><button class="button remove" id="'. $rows['id'] .'">remove</button></td>  
@@ -177,7 +180,7 @@
             element.addEventListener("click",(e) =>{
                 let id = e.target.id;
                 let venue = e.target.parentNode.parentNode.getElementsByTagName("td")[0].innerText;
-                // console.log(id,venue);
+                console.log(id,venue);
                 if(confirm("Are you sure you want to remove this venue!")){
                     window.location = `/pro/admin/dest.php?remove=${id}&venue=${venue}`;
                 }
