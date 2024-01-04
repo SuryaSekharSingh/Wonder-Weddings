@@ -13,11 +13,6 @@
     --box-shadow-ultra: 1rem 1rem 1rem rgba(0,0,0,0.2);
     --box-shadow-hover: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     --box-shadow-service: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    /* --box-shadow-service: rgb(38, 57, 77) 0px 20px 30px -10px; */
-    /* --card-width: 200px;
-    --card-height: 300px;
-    --card-transition-duration: 800ms;
-    --card-transition-easing: ease; */
     --brownish:rgb(173, 150, 80);
     /* Fonts */
     --font-title: "Montserrat", sans-serif;
@@ -111,13 +106,20 @@
 }
 .container .hall-body .box img{
     width:40rem;
-    border-radius: .5rem;
+    height:25rem;
+    border-radius: 1rem;
     box-shadow: var(--box-shadow);
     margin-bottom: 1rem;
+    transition:.2s linear;
+    overflow:none;
+}
+.container .hall-body .box img:hover{
+    transform:scale(1.01);
+    box-shadow: var(--box-shadow-ultra);
 }
 .container .hall-body .box h2{
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 900;
 }
 
@@ -125,7 +127,7 @@
 
 
 
-/* pricing page css  */
+/* packages page css  */
 .packages {
     /* background-color: var(--transparent-white); */
     /* box-shadow: var(--box-shadow); */
@@ -223,6 +225,7 @@
     text-align: center;
     padding:2rem;
     width:30rem;
+    height:35rem;
     background: var(--transparent-white);
     backdrop-filter: blur(1rem);
 }
@@ -402,5 +405,405 @@
     margin:.5rem auto;
     font-weight: 900;
     text-transform:uppercase;
+    color:var(--red);
+}
+
+
+
+
+
+/* contact us page css   */
+
+.venues .info .description{
+    width:60%;
+    margin: 2rem auto;
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 3rem;
+    /* letter-spacing: 0em; */
+    text-align: center;
+    color: var(--pure-black);
+}
+.venues .info .form{
+    padding:2rem;
+    max-width: 839px;
+    margin: auto;
+}
+.venues .info .form .First-last-wrap{
+    display: flex;
+    justify-content: space-between;
+
+}
+.venues .info .form .First-last-wrap .input-box{
+    width: 100%;
+    margin: 0;
+
+}
+.venues .info .form .input-box label{
+    font-size: 2.2rem;
+    font-weight: 600;
+    color:var(--red);
+    text-transform: uppercase;
+    margin: .5rem 0;
+}
+.First-last-wrap .input-box:First-child{
+    margin-right: 14px;
+}
+.input-box{
+    margin:2rem 0;
+}
+
+.venues .info .form .input-box input, .venues .info .form .input-box textarea{
+    border: .2rem solid var(--black);
+    color:var(--pure-black);
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 15px;
+    text-align: left;
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--transparent-white);
+    border-radius: 1rem;
+    transition: .1s linear;
+}
+.venues .info .form .input-boxinput:focus , .venues .info .form .input-box textarea:focus {
+    transform: scale(1.01);
+}
+.input-box section{
+    width: 100%;
+}
+ /* for popup functionality  */
+ .popup {
+    width: 400px;
+    background: var(--white);
+    border-radius: 1.5rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color:var(--black);
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+.popup img {
+    width: 10rem;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+.popup button {
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: var(--red);
+    color: var(--white);
+    border: 0;
+    outline: none;
+    font-size: 2.5rem;
+    border-radius: 4px;
+    /* cursor: pointer; */
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+/* reviews page css  */
+
+.review-container{
+    display:flex;
+    flex-direction: column;
+    max-width:70%;
+    margin:1rem auto;
+    /* border:1px solid black; */
+  }
+
+.review-container form{
+    padding:0 5rem;
+    margin-bottom: 2rem;
+}
+@media (max-width:900px){
+    .review-container{
+        max-width: 80%;
+    }
+}
+@media (max-width:630px){
+    .review-container{
+        max-width: 100%;
+    }
+}
+.review-container form h3{
+    font-size: 2.8rem !important;
+    color:var(--red) !important;
+    text-transform: uppercase !important;
+    font-weight: 600;
+}
+
+.review-container form .input-group{
+    display: flex !important;
+    flex-direction: row !important;
+    width:70%;
+    margin:auto;
+    margin-bottom: 1rem;
+    /* border: .2rem solid black; */
+}
+
+.review-container form .input-group i{
+    font-size: 2.5rem;
+    margin-top: 1.3rem;
+    color:var(--red);
+}
+
+.review-container form .input-group input{
+    width: 30rem;
+    height: 50px;
+    background: transparent;
+    border: none;
+    border-bottom: .2rem solid var(--pure-black);
+    outline: none;
+    font-size: 1.7rem;
+    font-weight: 900;
+    color:var(--pure-black);
+    padding: 0 35px 0 5px;
+    text-align: center;
+    transition: .2s linear;
+}
+.review-container form .input-group textarea{
+    height:15rem;
+    width: 60%;
+    background: transparent;
+    border-bottom: .2rem solid var(--pure-black);
+    outline: none;
+    font-size: 1.7rem;
+    font-weight: 900;
+    color:var(--pure-black);
+    padding: 0 35px 0 5px;
+    border-radius: 1rem;
+    transition: .2s linear;
+}
+
+.review-container form .input-group input:focus{
+    outline:none;
+    box-shadow: 0 .2rem 0 0 var(--red);
+    border-color:var(--red);
+}
+.review-container form .input-group textarea:focus{
+    outline:none;
+    box-shadow: 0 .2rem 0 0 var(--red);
+    /* border:none; */
+    border-radius: 1rem;
+}
+.rating {
+    display: inline-block;
+    position: relative;
+    height: 4rem;
+    font-size: 0;
+    /* Remove the font-size to make sure stars are displayed correctly */
+  }
+  
+  .rating input {
+    display: none;
+  }
+  
+  .rating label {
+    float: right;
+  }
+  
+  .rating label:before {
+    content: "\2605";
+    font-size: 3.5rem;
+    /* Add the font-size to the star character */
+    padding: 0 5px;
+  }
+  
+.rating input:checked~label:before,
+.rating input:checked~label~label:before {
+    color: var(--red);
+}
+
+.user-ratings{
+    background-color: var(--transparent-white);
+    backdrop-filter: blur(1rem);
+    border-radius: 2rem;
+    box-shadow: var(--box-shadow);
+    margin:5rem 1rem;
+    padding-bottom: 3rem;
+
+  }
+
+.user-ratings .lower_div {
+    max-width: 100%;
+    text-align: center;
+    
+}
+.user-ratings .lower_div .heading{
+    font-size: 4.5rem;
+    color:var(--blue);
+    text-transform: capitalize;
+}
+.user-ratings .lower_div span{
+    font-size: 3rem;
+}
+.user-ratings .lower_div p{
+    margin-top: 1rem;
+    font-size: 2rem;
+    color:var(--pure-black);
+    font-weight: 900;
+}
+
+.checked {
+    color: var(--red);
+}
+
+ .user-ratings .row{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+}
+ .user-ratings .row .side {
+    display: flex;
+    flex-direction: column;
+    width:20%;
+    text-align: right;
+ }
+ .user-ratings .row .side div{
+    height:2.5rem;
+    padding-top: .2rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+
+ }
+ .user-ratings .row .middle{
+    display: flex;
+    flex-direction: column;
+    width:60%;
+ }
+ .user-ratings .row .right div{
+    height:2.5rem;
+    padding-top: .2rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+ }
+ .user-ratings .row .right {
+    display: flex;
+    flex-direction: column;
+    width:20%;
+    text-align: left;
+ }
+
+  .bar-container {
+    width: 100%;
+    height:2.5rem;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: var(--white);
+    /* border-radius: 1rem; */
+  }
+  
+  /* Individual bars */
+  .bar-5 {
+    width: 60%;
+    height: 2.5rem;
+    background-color: #04AA6D;
+  }
+  
+  .bar-4 {
+    width: 30%;
+    height: 2.5rem;
+    background-color: #2196F3;
+  }
+  
+  .bar-3 {
+    width: 10%;
+    height: 2.5rem;
+    background-color: var(--blue);
+  }
+  
+  .bar-2 {
+    width: 4%;
+    height: 2.5rem;
+    background-color: #ff9800;
+  }
+  
+  .bar-1 {
+    width: 15%;
+    height: 2.5rem;
+    background-color: var(--red);
+  }
+
+.reviews-container{
+    padding:0 1rem;
+    align-items: center;
+    margin-bottom: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap:5rem;
+}
+.reviews-container .reviews-slide{
+    background-color: var(--transparent-white);
+    backdrop-filter: blur(1rem);
+    height: 40rem;
+    width:35rem;
+    overflow: none;
+    border-radius: 2rem;
+    box-shadow: var(--box-shadow-ultra);
+    display:block;
+    text-align: center;
+    padding:3rem 2rem;
+    margin:auto;
+}
+.reviews-container .reviews-slide img{
+    border-radius: 50%;
+    height:7rem;
+    width:7rem;
+}
+.reviews-container .reviews-slide h3{
+    font-size: 2.3rem;
+    text-transform: capitalize;
+    margin-top: 1rem;
+    color:var(--pure-black);
+    text-transform: capitalize;
+    font-weight: 900;
+}
+.reviews-container .reviews-slide p{
+    font-size: 1.5rem;
+    line-height: 2;
+    font-weight: 600;
+    color:var(--pure-black);
+    padding:1rem 0;
+}
+.reviews-container .reviews-slide .star-ratings{
+    margin-top: 4rem;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.reviews-container .reviews-slide .star-ratings .date{
+    font-size: 2rem;
+}
+
+.reviews-container .reviews-slide .stars i{
+    font-size: 2rem;
     color:var(--red);
 }

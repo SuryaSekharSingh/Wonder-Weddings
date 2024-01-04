@@ -369,7 +369,7 @@
     .package-body{
         padding: 2rem 5rem;
         display:grid;
-        grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+        grid-template-columns: repeat(auto-fit,minmax(21rem,1fr));
         gap:3rem;
     }
     .package-body .box{

@@ -3,7 +3,7 @@
     $res = mysqli_query($conn,"select plan,price from pricing");
     $price = array();
     while($row = mysqli_fetch_assoc($res)){
-        $price[$row['plan']] = $row['price'];
+        $price[$row['plan']] = preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $row['price']);
     }
 
 ?>
@@ -92,7 +92,10 @@
 
             </div>
 
-            <p style="text-align:center;margin-top:1rem;color:var(--pure-black);font-size:1.5rem;"><span style="color:var(--red);font-size:1rem;"><i class="fa-solid fa-asterisk"></i></span> However, if you have any issues related to the packages feel free to contact us so that we can provide you with the specifications you are looking for.</p>
+            <p style="text-align:center;margin-top:1rem;color:var(--pure-black);font-size:1.5rem;"><span
+                    style="color:var(--red);font-size:1rem;"><i class="fa-solid fa-asterisk"></i></span> However, if you
+                have any issues related to the packages feel free to contact us so that we can provide you with the
+                specifications you are looking for.</p>
         </section>
 
         <section class="reviews">
@@ -106,108 +109,29 @@
 
                 <div class="swiper-wrapper">
 
-                    <div class="swiper-slide slide">
+                    <?php 
+                        $sql = "select * from reviews";
+                        $result = mysqli_query($conn,$sql);
+                        while($row = mysqli_fetch_assoc($result)){
+                            $i = $row['stars'];
+                            echo '
+                            <div class="swiper-slide slide">
 
-                        <img src="images/pic-1.png" alt="">
-                        <h3 style="color:var(--pure-black)">john doe</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium earum temporibus
-                            aliquam quaerat quia vitae odit amet ullam, beatae quidem deleniti delectus ratione aliquid
-                            illo tempora explicabo asperiores vero veritatis!</p>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+                                <img src="images/user.png" alt="">
 
-                    </div>
+                                <h3 style="color:var(--pure-black)">' . $row['name'] . '</h3>
+                                <p>' . $row['review'] . '</p>
+                                <div class="stars">';
+                                while($i>0){
+                                    echo '<i class="fas fa-star"></i>';
+                                    $i--;
+                                }
+                                echo '</div>
 
-
-                    <div class="swiper-slide slide">
-
-                        <img src="images/pic-2.png" alt="">
-                        <h3>john doe</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium earum temporibus
-                            aliquam quaerat quia vitae odit amet ullam, beatae quidem deleniti delectus ratione aliquid
-                            illo tempora explicabo asperiores vero veritatis!</p>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-
-                    </div>
-
-                    <div class="swiper-slide slide">
-
-                        <img src="images/pic-3.png" alt="">
-                        <h3>john doe</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium earum temporibus
-                            aliquam quaerat quia vitae odit amet ullam, beatae quidem deleniti delectus ratione aliquid
-                            illo tempora explicabo asperiores vero veritatis!</p>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-
-                    </div>
-
-                    <div class="swiper-slide slide">
-
-                        <img src="images/pic-4.png" alt="">
-                        <h3>john doe</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium earum temporibus
-                            aliquam quaerat quia vitae odit amet ullam, beatae quidem deleniti delectus ratione aliquid
-                            illo tempora explicabo asperiores vero veritatis!</p>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-
-                    </div>
-
-                    <div class="swiper-slide slide">
-
-                        <img src="images/pic-5.png" alt="">
-                        <h3>john doe</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium earum temporibus
-                            aliquam quaerat quia vitae odit amet ullam, beatae quidem deleniti delectus ratione aliquid
-                            illo tempora explicabo asperiores vero veritatis!</p>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-
-                    </div>
-
-                    <div class="swiper-slide slide">
-
-                        <img src="images/pic-6.png" alt="">
-                        <h3>john doe</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium earum temporibus
-                            aliquam quaerat quia vitae odit amet ullam, beatae quidem deleniti delectus ratione aliquid
-                            illo tempora explicabo asperiores vero veritatis!</p>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-
-                    </div>
+                            </div>
+                            ';
+                        }        
+                    ?>
 
                 </div>
                 <div class="swiper-pagination" style="display:none;"></div>
@@ -220,6 +144,10 @@
     </div>
 
 
+
+
+
+    <?php  include("include/body_links.php");?>
 
     <script>
     var swiper = new Swiper(".reviews-slider", {
@@ -246,9 +174,6 @@
         },
     });
     </script>
-
-    <?php  include("include/body_links.php");?>
-
 </body>
 
 </html>

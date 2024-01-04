@@ -57,10 +57,16 @@
                 $sno = $row['sno'];
                 $address= $row['hall'];
                 $hall= explode ("-",$address);
+                $sql = "select * from venue where id=$id";
+                $res = mysqli_query($conn,$sql);
+                $row = mysqli_fetch_assoc($res);
+                $city = $row['city'];
                 echo '<div class="box">
-                    <img src="images/jageer plaza delhi.jpg" alt="" />
+                    <div class="image">
+                    <img src="images/venues/' . $city . '/' . $sno . '.jpg" alt="" />
+                    </div>
                     <h2>' . $hall[0] . '</h2>
-                    <a href="booking.php?venue_id=' . $id . '&hall_name=' . $hall[0] .'" class="button btn-success" style="padding: .7rem 1rem;">Select hall</a>
+                    <a href="booking.php?hall_sno=' . $sno . '&hall_name=' . $hall[0] .'" class="button btn-success" style="padding: .7rem 1rem;">Select hall</a>
                 </div>';
             }
             ?>

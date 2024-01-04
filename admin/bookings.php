@@ -78,10 +78,10 @@ if(isset($_GET['removeID'])){
                             <td>' . $row["date_of_booking"] . '</td>   
                             <td>' . $row["package"] . '</td>   
                             <td>
-                            <button class="button check" style="padding:.3rem .3rem;"><i class="fa-solid fa-user-check"></i></button>
-                            <button class="button delete" id="' . $row['id'] . '" style="padding:.3rem .5rem;"><i class="fa-solid fa-trash-can"></i></button>
+                            <button class="button delete fa-solid fa-trash-can" id="' . $row['id'] . '" style="padding:.3rem .5rem;"></button>
                             </td>  
                             </tr>';
+                            // <button class="button check" style="padding:.3rem .3rem;"><i class="fa-solid fa-user-check"></i></button>
                         }
                     ?>
 

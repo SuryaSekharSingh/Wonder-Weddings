@@ -52,11 +52,17 @@
 
 .account p{
     padding-top:1rem;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 800;
     text-transform: capitalize;
     user-select: none;
     color:var(--pure-black);
+}
+
+.icon i{
+    color:var(--red);
+    font-size: 2rem;
+    font-weight: 900;
 }
 </style>
 
@@ -88,7 +94,7 @@ echo '<div class="main-header">
 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
    
     echo '<div class="account">
-        <p>Welcome ' . $_SESSION['username'] . '</p>
+        <p><span class="icon"><i class="fa-regular fa-user"></i></span> ' . $_SESSION['username'] . '</p>
         <a href="logout.php" class="btn " style="font-size:1.7rem;padding:.5rem;border-radius:.7rem;border:var(--border);margin:.2rem 1.2rem .2rem 1rem;color:var(--pure-black);">Logout</a>
     </div>';
     
@@ -110,3 +116,15 @@ else{
     </div>';
             // <div id="menu-button" class="fas fa-bars"></div>
 ?>
+
+<script>
+    const navLinks = document.querySelectorAll(".header a");
+
+    navLinks.forEach((link)=>{
+
+        if(window.location.href === link.href){
+            link.classList.add("current-page");
+            console.log("working...");
+        }
+    })
+</script>

@@ -1,0 +1,267 @@
+.button {
+    /* background-image: linear-gradient(to bottom right, var(--brownish), var(--red)); */
+    background-color: rgb(104, 19, 4);
+    color: var(--white);
+    width: 8rem;
+    text-align: center;
+    transition: .2s linear;
+    padding: 1rem 1rem;
+}
+
+.button:hover {
+    background-color: var(--pure-black);
+    color: var(white);
+}
+
+.venues .info .booking {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (max-width:810px) {
+    .venues .info .booking {
+        flex-direction: column;
+    }
+
+    /* .booking .booking-form{
+        
+    } */
+}
+
+@media (max-width:420px) {
+    .venues .info .calendar{
+        width:35rem;
+    }
+    .venues .info .calendar .month{
+        margin:0 2rem 0 1rem !important;
+    }
+    .venues .info .calendar .month button{
+        width:5rem;
+        padding-top: 0.6rem;
+    }
+    .venues .info .calendar .month .current button{
+        width:6rem;
+    }
+    .venues .info .calendar .cal-row .cal-col{
+        font-size: 1.5rem !important;
+        height:4rem !important;
+        width:4rem !important;
+
+    }
+    .venues .info .calendar .cal-row .cal-week{
+        font-size: 2rem !important;
+        height:4rem !important;
+        width:4rem !important;
+    }
+}
+
+.venues .info .calendar {
+    background-image: linear-gradient(to bottom right, var(--red), var(--brownish));
+    backdrop-filter: blur(1rem);
+    box-shadow: var(--box-shadow-ultra);
+    display: inline-block;
+    border-radius: 1rem;
+    max-height: 50.3rem;
+    margin: auto;
+    margin-top: 6rem;
+    padding: 1rem;
+}
+
+.venues .info .calendar .date {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.venues .info .calendar .month {
+    margin: 0 4rem 0 2rem;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+.venues .info .calendar .cal-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.venues .info .calendar .cal-row .cal-week {
+    padding: 0.5rem;
+    margin: .5rem;
+    background-color: var(--pure-black);
+    color: var(--white);
+    font-weight: 800;
+    border-radius: 1rem;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    user-select: none;
+    font-size: 2.5rem;
+}
+
+.venues .info .calendar .cal-row .cal-col {
+    padding: 1rem;
+    margin: .5rem;
+    /* background-color: rgb(59, 59, 59); */
+    background-color: var(--transparent-white);
+    background-color: blur(1rem);
+    color: var(--pure-black);
+    font-weight: 800;
+    border-radius: 1rem;
+    font-size: 2rem;
+    width: 5rem;
+    user-select: none;
+    height: 5rem;
+    text-align: center;
+    transition: .3s linear;
+}
+
+.venues .info .calendar .cal-row .cal-col:hover {
+    background-color: var(--blue);
+    color: var(--pure-black);
+    cursor: pointer;
+}
+
+.calendar .year {
+    background-color: rgb(104, 19, 4);
+    display: flex;
+    width: 8rem;
+    height: 5rem;
+    border: var(--border);
+    border-radius: .5rem;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 0 1rem;
+    transition: .2s linear;
+}
+
+.calendar .year:hover {
+    background-color: var(--pure-black);
+}
+
+.calendar .year span {
+    color: var(--white);
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.calendar .year p {
+    color: var(--white);
+    font-size: 1.8rem;
+    padding: 0 1rem;
+    font-weight: 500;
+    user-select: none;
+    margin-top: 1.8rem;
+}
+
+.booking .booking-form {
+    display: block;
+    margin: auto;
+    margin-bottom: 1rem;
+    /* margin-right: 10rem; */
+}
+.booking .booking-form form{
+    margin-bottom: 2rem;
+}
+.booking .booking-form h2 {
+    margin-top: 5rem;
+    font-size: 3.2rem;
+    color: var(--red);
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+}
+
+.booking .booking-form .input-box {
+    position: relative;
+    width: 35rem;
+    margin: 30px 0;
+    border-bottom: 2px solid var(--white);
+}
+
+.booking .booking-form input[type=submit] {
+    width: 80%;
+    height: 4.2rem;
+    background: var(--red);
+    border: none;
+    outline: none;
+    border-radius: 10rem;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--pure-black);
+    font-weight: 900;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1.7rem;
+    color: var(--pure-black);
+    font-weight: 300;
+    transition: .2s linear;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input,
+.input-box select {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--pure-black);
+    padding: 0 35px 0 5px;
+}
+
+.input-box select {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.input-box select option:hover {
+    background-color: var(--red) !important;
+}
+
+.input-box input:focus {
+    outline: none;
+    box-shadow: 0 .2rem 0 0 var(--red);
+    border-color: var(--red);
+}
+
+.input-box input:focus+label,
+.input-box input:not(:placeholder-shown)+label {
+    font-weight: 600;
+    color: initial;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    color: var(--red);
+    font-size: 3rem;
+    line-height: 57px;
+}
+
+button {
+    width: 80%;
+    height: 4.2rem;
+    /* background: rgb(249, 16, 144); */
+    background: var(--red);
+    border: none;
+    outline: none;
+    border-radius: 10rem;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--pure-black);
+    font-weight: 900;
+}

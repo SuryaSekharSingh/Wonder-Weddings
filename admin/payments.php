@@ -15,6 +15,8 @@ if(isset($_GET['add']) && isset($_GET['id'])){
 
     $sql = "UPDATE `booking` SET `payment_done` = $old_payment , `payment_due` = $due_payment WHERE `booking`.`id` =".$_GET['id'];
     $res = mysqli_query($conn,$sql);
+    header("location:payments.php");
+    exit();
     // echo var_dump($old_payment);
 }
 // adding comma's in indian currency format  but it doesn't work on windows as money_format function doesn't work properly
@@ -111,8 +113,9 @@ if(isset($_GET['add']) && isset($_GET['id'])){
             let id = e.target.id;
             var payment_done = e.target.parentNode.parentNode.getElementsByTagName("td")[6].innerText;
             let new_payment = prompt("Enter amount !");
+            let payment_indian_format = new_payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 if(new_payment !== null){
-                    if(confirm(`Do you want to add ${new_payment}`)){
+                    if(confirm(`Do you want to add ₹${payment_indian_format}`)){
                         window.location =  `/pro/admin/payments.php?add=${new_payment}&id=${id}`;
                     }
                     else{

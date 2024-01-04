@@ -1,5 +1,9 @@
 <?php
     include("include/db_connect.php");
+    if(isset($_GET['booking']) && $_GET['booking'] == true){
+        // show error alert that user needs to login first
+    }
+
     $query = "select * from venue";
     $result = mysqli_query($conn,$query);
     

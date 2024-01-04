@@ -27,7 +27,7 @@ $existUser = false;
         if(($password == $cpassword) && $exists == false)
         {
            $hash = password_hash($password,PASSWORD_DEFAULT);
-           $sql="INSERT INTO `users` (name , contact , `email`, `password`, `join_date`) VALUES ('$name' , '$contact' , '$email', '$hash', 'current_timestamp()')";     
+           $sql="INSERT INTO `users` (name , contact , `email`, `password`) VALUES ('$name' , '$contact' , '$email', '$hash')";     
            $result=mysqli_query($conn,$sql);
            if($result){
                $showAlert=true;
@@ -122,7 +122,7 @@ $existUser = false;
                             <!-- <ion-icon name="mail"></ion-icon> -->
                             <i class="fas fa-phone"></i>
                         </span>
-                        <input type="text" name="contact" required>
+                        <input type="text" name="contact" oninput="this.value = this.value.replace(/[^0-9]/g, '').substring(0,10)" required>
                         <label>Contact</label>
                     </div>
 

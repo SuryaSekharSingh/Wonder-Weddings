@@ -1,6 +1,8 @@
 <?php
     include("include/db_connect.php");
-
+    if(isset($_GET['booking']) && $_GET['booking'] == true){
+        // show some success alert and the booked div where booking data will be shown 
+    }
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +14,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include("include/head_links.php"); ?>
     <title>Welcome</title>
-
+    <style>
+        @media (max-width:890px){
+            .venue-detail{
+                margin-left: -30% !important;
+            }
+        }
+        @media (max-width:800px){
+            .venue-detail{
+                margin-left: -20% !important;
+            }
+        }
+        @media (max-width:700px){
+            .venue-detail{
+                margin-left: -10% !important;
+            }
+            .venue-detail .content{
+                width:40rem !important;
+            }
+            .venue-detail .content h3{
+                font-size: 2.5rem !important;
+            }
+            .venue-detail .content p{
+                font-size: 1.1rem !important;
+            }
+        }
+        @media (max-width:460px){
+            .venue-detail{
+                margin-left: 0 !important;
+            }
+            .venue-detail .content{
+                width:30rem !important;
+            }
+            .venue-detail .content h3{
+                font-size: 2rem !important;
+            }
+            .venue-detail .content p{
+                font-size: 1rem !important;
+            }
+        }
+    </style>
 
 
 </head>
@@ -112,7 +153,7 @@
                 <div class="venue-home">
                     <div class="swiper-slide slide"
                         style="background:url(images/venue-home-main.jpg) no-repeat;width:90%;margin:auto;display:flex;border-radius:1.5rem;">
-                        <div class="div-left" style="margin-left: -50%;margin-top: 10rem;">
+                        <div class="div-left venue-detail" style="margin-left: -40%;margin-top: 10rem;">
                             <div class="content" style="width:55rem;">
                                 <h3 style="padding:1rem;padding-bottom:.5rem;font-size:3.2rem;">Plan your dream wedding
                                 </h3>

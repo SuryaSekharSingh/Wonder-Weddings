@@ -21,6 +21,7 @@ include("include/db_connect.php");
                     $_SESSION['loggedin'] = true;
                     $name = explode (" ",$row['name']);
                     $_SESSION['username'] = $name[0];
+                    $_SESSION['userID'] = $row['id'];
                     header("location:index.php");
                     exit();
                 }

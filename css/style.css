@@ -151,6 +151,12 @@ section{
     transform:scale(1.1,1.1);
 }
 
+.current-page{
+    /* text-decoration: underline !important;
+    text-decoration-color: var(--red) !important; */
+    color: var(--blue) !important;
+}
+
 #menu-button{
     font-size:2.5rem;
     color:var(--pure-black);
