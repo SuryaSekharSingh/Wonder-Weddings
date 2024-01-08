@@ -5,4 +5,4 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 <!-- custom js file here  -->
-<script src="/js/script.js"></script>
+<script src="./js/script.js"></script>
