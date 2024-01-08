@@ -73,23 +73,23 @@ if(isset($_GET['hall_sno'])){
 
                             <div class="month">
 
-                                <div class="previous"> <button class="button" onclick="currMonth(-1)"><i
+                                <div class="previous"> <button class="button" onclick="month_change_button_click(-1)"><i
                                             class="fa-solid fa-angles-left"></i></button></div>
                                 <div class="current"
                                     style="box-shadow: var(--box-shadow-ultra);transform: translateY(-.5rem);"> <button
-                                        class="button" onload="currMonth(0)"></button>
+                                        class="button" onload="month_change_button_click(0)"></button>
                                 </div>
-                                <div class="next"> <button class="button" onclick="currMonth(1)"><i
+                                <div class="next"> <button class="button" onclick="month_change_button_click(1)"><i
                                             class="fa-solid fa-angles-right"></i></button></div>
 
                             </div>
 
                             <div class="year">
-                                <span class="prev-year" onclick="currYear(-1)">
+                                <span class="prev-year" onclick="year_change_button_click(-1)">
                                     <i class="fa-solid fa-angles-left" style="font-size:2rem;"></i>
                                 </span>
                                 <p></p>
-                                <span class="next-year" onclick="currYear(1)">
+                                <span class="next-year" onclick="year_change_button_click(1)">
                                     <i class="fa-solid fa-angles-right" style="font-size:2rem;"></i>
                                 </span>
 
@@ -332,15 +332,26 @@ if(isset($_GET['hall_sno'])){
     var nextYear = 0,
         prevYear = 0;
 
-    function currYear(p = 0) {
-        cy += p;
-        if ((cy - year < 3)) {
-            calendar_year.innerText = cy;
-            year = cy;
-            currMonth(0);
-        } else {}
+
+    function month_change_button_click(p = 0){
+        if(p == 1 && nm == 0){
+            currYear(1);
+        }
+        if(p == -1 && pm == 11){
+            currYear(-1);
+        }
+        currMonth(p);
     }
-    // currYear();
+    
+    function year_change_button_click(p = 0){
+        currYear(p);
+        currMonth(0);
+    }
+
+    function currYear(p = 0) {
+        year += p;
+        calendar_year.innerText = year;
+    }
 
     function correction(m = 0) {
         if (m < 0) {
@@ -352,9 +363,8 @@ if(isset($_GET['hall_sno'])){
     }
 
     function currMonth(p = 0) {
+        // debugger;
         calendar_cols.forEach((el, key) => {
-            let i = parseInt((key) / 7);
-            let j = key % 7;
             el.innerText = "";
         })
 
@@ -362,40 +372,35 @@ if(isset($_GET['hall_sno'])){
         cm = correction(cm + p);
         nm = correction(nm + p);
 
+        // console.log(`pm: ${pm}, cm: ${cm}, nm: ${nm}, year: ${year}, cy: ${cy}`)
         current.innerHTML = months[cm];
 
-        // dec to jan -> year increase and vice versa 
-        if (cm == 11) {
-            nextYear++;
-            if (prevYear == 1) {
-                prevYear = 0;
-                currYear(-1);
+        // CurrentMonth = correction(CurrentMonth);
+        // console.log(pm, cm, nm, CurrentMonth);
+        var month = cal.monthDays(year, cm);
+        // console.log(month)
+
+
+        for(let count = 0; count<(month.length*7); count++){
+            let i = parseInt((count) / 7);
+            let j = count % 7;
+
+            if(month[i][j] != 0){
+                calendar_cols[count].innerText = month[i][j];
             }
-        } else if (cm == 0) {
-            prevYear++;
-            if (nextYear == 1) {
-                nextYear = 0;
-                currYear(1);
+            else {
+                calendar_cols[count].innerText = "";
             }
-        } else {
-            prevYear = 0;
-            nextYear = 0;
+        }
+        
+        // Hiding lasta .cal-row if not used 
+        if(month.length < 6){
+            document.querySelector('.cal-row:last-child').style.display = "none";
+        }
+        else {
+            document.querySelector('.cal-row:last-child').style.display = "flex";
         }
 
-        // CurrentMonth = correction(CurrentMonth);
-        console.log(pm, cm, nm, CurrentMonth);
-        var month = cal.monthDays(year, cm);
-        calendar_cols.forEach((el, key) => {
-
-            let i = parseInt((key) / 7);
-            let j = key % 7;
-            console.log(i, j, key);
-            if (month[i][j] != 0) {
-                el.innerText = month[i][j];
-            } else {
-                el.innerText = "";
-            }
-        });
     }
 
     currMonth(0);
