@@ -99,14 +99,14 @@ if(isset($_GET['hall_sno'])){
 
 
                         <div class="cal-row">
-                            <div class="cal-week" style="background-color: var(--transparent-white);color:var(--red);">S
+                            <div class="cal-week" style="background-color: var(--transparent-white);color:var(--red);">Su
                             </div>
-                            <div class="cal-week">M</div>
-                            <div class="cal-week">T</div>
-                            <div class="cal-week">W</div>
-                            <div class="cal-week">T</div>
-                            <div class="cal-week">F</div>
-                            <div class="cal-week">S</div>
+                            <div class="cal-week">Mo</div>
+                            <div class="cal-week">Tu</div>
+                            <div class="cal-week">We</div>
+                            <div class="cal-week">Th</div>
+                            <div class="cal-week">Fr</div>
+                            <div class="cal-week">Sa</div>
                         </div>
 
                         <div class="cal-row">

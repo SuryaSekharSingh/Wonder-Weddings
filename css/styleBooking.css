@@ -49,7 +49,7 @@
 
     }
     .venues .info .calendar .cal-row .cal-week{
-        font-size: 2rem !important;
+        font-size: .2rem !important;
         height:4rem !important;
         width:4rem !important;
     }
@@ -96,8 +96,10 @@
     width: 5rem;
     height: 5rem;
     text-align: center;
+    line-height: 4rem;
     user-select: none;
-    font-size: 2.5rem;
+    font-size: 2rem;
+
 }
 
 .venues .info .calendar .cal-row .cal-col {
