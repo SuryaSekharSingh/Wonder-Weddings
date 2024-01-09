@@ -117,12 +117,22 @@
     transition: .3s linear;
 }
 
+.venues .info .calendar .cal-row .cal-date-booked {
+    background-color: rgb(104, 19, 4);
+    color: rgb(203, 203, 203);
+}
+
 .venues .info .calendar .cal-row .cal-col:hover {
     background-color: var(--blue);
     color: var(--pure-black);
     cursor: pointer;
 }
 
+.venues .info .calendar .cal-row .cal-date-booked:hover {
+    background-color: rgb(104, 19, 4);
+    color: rgb(203, 203, 203);
+    cursor: not-allowed;
+}
 .calendar .year {
     background-color: rgb(104, 19, 4);
     display: flex;

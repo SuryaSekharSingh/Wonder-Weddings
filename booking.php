@@ -381,6 +381,36 @@ if(isset($_GET['hall_sno'])){
         // console.log(month)
 
 
+        // disable booked date
+        fetch(`include/get_booked_dates.php?month=${cm+1}&year=${year}`)
+        .then(res => res.json())
+        .then(res => {
+            let booked_date_list = res.map(obj => parseInt(obj.wedding_date.split('-')[2]));
+            booked_date_list.sort((a,b) => a - b);
+            console.log(booked_date_list);
+
+            let k = 0;
+            let i = 0;
+
+            while(i < calendar_cols.length){
+                calendar_cols[i].classList.remove('cal-date-booked');
+                i++;
+            }
+
+            i = 0;
+
+            while(k < booked_date_list.length && i < calendar_cols.length){
+                if(calendar_cols[i].innerText == booked_date_list[k]){
+                    calendar_cols[i].classList.add('cal-date-booked');
+                    k++;
+                    console.log("found")
+                }
+                console.log(i);
+                i++;
+            }
+        });
+
+        //updating date in the calendar_cols
         for(let count = 0; count<(month.length*7); count++){
             let i = parseInt((count) / 7);
             let j = count % 7;
@@ -393,7 +423,7 @@ if(isset($_GET['hall_sno'])){
             }
         }
         
-        // Hiding lasta .cal-row if not used 
+        // Hiding last .cal-row if not used 
         if(month.length < 6){
             document.querySelector('.cal-row:last-child').style.display = "none";
         }
