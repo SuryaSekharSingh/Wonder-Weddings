@@ -5,6 +5,9 @@ if(isset($_GET['hall_sno'])){
     $hall_sno = $_GET['hall_sno'];
     $hallName = $_GET['hall_name'];
 }
+else{
+    header("location:venues.php");
+}
 
 ?>
 
@@ -28,37 +31,6 @@ if(isset($_GET['hall_sno'])){
     <div class="container">
         <?php 
             include("include/header.php"); 
-            // echo $_SESSION['userID'];
-            if($_SERVER["REQUEST_METHOD"] == "POST"){
-                $Gname = $_POST['g-name'];
-                $Bname = $_POST['b-name'];
-                $GPname = $_POST['g-p-name'];
-                $BPname = $_POST['b-p-name'];
-                $contact = $_POST['contact'];
-                $email = $_POST['email'];
-                $package = $_POST['package'];
-                $weddingDate = $_POST['date'];
-                $hall_sno = $_POST['hall_sno'];
-                $hallName = $_POST['venue'];
-                if(isset($_SESSION['userID'])){
-                    $userID = $_SESSION['userID'];
-                    
-                    $packageQuery = "select * from pricing where plan='$package'";
-                    $packageResult = mysqli_query($conn, $packageQuery);
-                    $packageRow = mysqli_fetch_assoc($packageResult);
-                    $payment_due = $packageRow['price'];
-
-                    $bookingQuery = "insert into booking (user_id, groom_name, bride_name, groom_parent, bride_parent, contact, email, hall_sno, wedding_date, package, payment_done , payment_due) VALUES 
-                    ($userID , '$Gname' , '$Bname' , '$GPname' , '$BPname' , '$contact' , '$email' , '$hall_sno' , '$weddingDate' , '$package' , 0 , '$payment_due')";
-                    $bookingResult = mysqli_query($conn, $bookingQuery);
-                    header("location:index.php?booking=true");
-                    exit();
-                }
-                else{
-                    header("location:booking.php?hall_sno=$hall_sno&hall_name=$hallName");
-                    exit();
-                }
-            }
         ?>
 
         <section class="venues">
@@ -166,7 +138,7 @@ if(isset($_GET['hall_sno'])){
                     </div>
 
                     <div class="booking-form">
-                        <form action="booking.php" method="POST">
+                        <form action="include/processBooking.php" method="POST">
                             <h2>details</h2>
 
                             <div class="input-box">
@@ -221,7 +193,7 @@ if(isset($_GET['hall_sno'])){
                                 <span class="icon">
                                     <i class="fas fa-calendar"> </i>
                                 </span>
-                                <input type="text" name="date" id="dateInput" class="dateInput" maxlength="10" oninput="formatDateInput()" onfocus="useDatePicker()" required>
+                                <input type="text" name="date" id="dateInput" class="dateInput" maxlength="10" required>
                                 <label for="dateInput">Date of Wedding (yyyy-mm-dd)</label>
                             </div>
 
@@ -238,8 +210,8 @@ if(isset($_GET['hall_sno'])){
                                 <span class="icon">
                                     <i class="fa-solid fa-money-check-dollar"></i>
                                 </span>
-                                <select name="package" id="package">
-                                    <option value="">Package</option>
+                                <select name="package" id="package" required>
+                                    <option value="">Select Package</option>
                                     <?php
                                         $sql = "select * from pricing";
                                         $res = mysqli_query($conn,$sql);
@@ -262,13 +234,8 @@ if(isset($_GET['hall_sno'])){
 
         </section>
 
-        <?php include("include/footer.php"); ?>
+        <?php include("include/footer.php");  ?>
     </div>
-
-
-
-
-
 
 
     <?php  include("include/body_links.php");?>
@@ -294,30 +261,6 @@ if(isset($_GET['hall_sno'])){
             }
         })
     })
-
-    // function formatDateInput() {
-    //     var input = document.querySelector(".dateInput");
-    //     var value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
-    //     var formattedValue = '';
-
-    //     if (value.length >= 4) {
-    //         formattedValue += value.substring(0, 4) + '-';
-    //     }
-
-    //     if (value.length >= 6) {
-    //         formattedValue += value.substring(4, 6) + '-';
-    //     }
-
-    //     if (value.length >= 8) {
-    //         formattedValue += value.substring(6, 8);
-    //     }
-
-    //     input.value = formattedValue;
-    // }
-    // function useDatePicker(){
-    //     console.log("hello date picker")
-    //     dateInput.title="use the calendar";
-    // }
     
     var cal = new Calendar();
     var d = new Date();

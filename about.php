@@ -83,8 +83,8 @@
 
                 <div class="box">
                     <img src="images/team-4.jpg" alt="">
-                    <h3>prakash rajak</h3>
-                    <p>reviews</p>
+                    <h3>ayush bhagat</h3>
+                    <p>portfolio</p>
                     <div class="share">
                         <a href="#" class="fab fa-facebook"></a>
                         <a href="#" class="fab fa-instagram"></a>
@@ -94,9 +94,9 @@
                 </div>
 
                 <div class="box">
-                    <img src="images/team-4.jpg" alt="">
-                    <h3>ayush bhagat</h3>
-                    <p>portfolio</p>
+                    <img src="images/team-2.jpg" alt="">
+                    <h3>prakash rajak</h3>
+                    <p>reviews</p>
                     <div class="share">
                         <a href="#" class="fab fa-facebook"></a>
                         <a href="#" class="fab fa-instagram"></a>

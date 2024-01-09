@@ -1,8 +1,5 @@
 <?php
     include("include/db_connect.php");
-    if(isset($_GET['booking']) && $_GET['booking'] == true){
-        // show some success alert and the booked div where booking data will be shown 
-    }
 ?>
 
 <!DOCTYPE html>
@@ -15,44 +12,53 @@
     <?php include("include/head_links.php"); ?>
     <title>Welcome</title>
     <style>
-        @media (max-width:890px){
-            .venue-detail{
-                margin-left: -30% !important;
-            }
+    @media (max-width:890px) {
+        .venue-detail {
+            margin-left: -30% !important;
         }
-        @media (max-width:800px){
-            .venue-detail{
-                margin-left: -20% !important;
-            }
+    }
+
+    @media (max-width:800px) {
+        .venue-detail {
+            margin-left: -20% !important;
         }
-        @media (max-width:700px){
-            .venue-detail{
-                margin-left: -10% !important;
-            }
-            .venue-detail .content{
-                width:40rem !important;
-            }
-            .venue-detail .content h3{
-                font-size: 2.5rem !important;
-            }
-            .venue-detail .content p{
-                font-size: 1.1rem !important;
-            }
+    }
+
+    @media (max-width:700px) {
+        .venue-detail {
+            margin-left: -10% !important;
         }
-        @media (max-width:460px){
-            .venue-detail{
-                margin-left: 0 !important;
-            }
-            .venue-detail .content{
-                width:30rem !important;
-            }
-            .venue-detail .content h3{
-                font-size: 2rem !important;
-            }
-            .venue-detail .content p{
-                font-size: 1rem !important;
-            }
+
+        .venue-detail .content {
+            width: 40rem !important;
         }
+
+        .venue-detail .content h3 {
+            font-size: 2.5rem !important;
+        }
+
+        .venue-detail .content p {
+            font-size: 1.1rem !important;
+        }
+    }
+
+    @media (max-width:460px) {
+        .venue-detail {
+            margin-left: 0 !important;
+        }
+
+        .venue-detail .content {
+            width: 30rem !important;
+        }
+
+        .venue-detail .content h3 {
+            font-size: 2rem !important;
+        }
+
+        .venue-detail .content p {
+            font-size: 1rem !important;
+        }
+    }
     </style>
 
 
@@ -63,7 +69,12 @@
 
         <?php 
             include("include/header.php");
-            
+            if(isset($_GET['booking']) && $_GET['booking'] == true){
+                echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success!</strong> Booking Successful.
+                <button type="button" class="btn-close bookALert-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>'; 
+            }
         ?>
 
         <section class="home">
@@ -125,19 +136,130 @@
                 <div class="swiper-button-prev text-danger"></div>
                 <div class="swiper-pagination"></div>
             </div>
+            <?php 
+            if(isset($_SESSION['userID'])){
 
+                $sql="select * from booking where user_id = " . $_SESSION['userID']; 
+                $result=mysqli_query($conn,$sql);
+                    $numRows=mysqli_num_rows($result); 
+                    if($numRows> 0){
+                    echo '<div class="wedding-container">
+                        <h3>My Bookings (' . $numRows . ')</h3>
+                        <div class="title-dash" style="width:16rem;"></div>';
+                        while($row = mysqli_fetch_assoc($result)){
+                            $payment_done = preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $row['payment_done']);
+    
+                            $payment_due = preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $row['payment_due']);
+                            $package = $row['package'];
+                            $priceQuery = "SELECT * from pricing WHERE plan = '$package'";
+                            $priceResult = mysqli_query($conn,$priceQuery);
+                            $rowPrice = mysqli_fetch_assoc($priceResult);
+                            $totalPrice = preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $rowPrice['price']);
+
+                            $hallQuery = "SELECT * from halls WHERE sno = " . $row['hall_sno'];
+                            $hallResult = mysqli_query($conn,$hallQuery);
+                            $rowHall = mysqli_fetch_assoc($hallResult);
+                            $hall = explode ("-",$rowHall['hall']);
+                            
+                            $cityQuery = "SELECT * from venue WHERE id = " . $rowHall['id'];
+                            $cityResult = mysqli_query($conn,$cityQuery);
+                            $rowCity = mysqli_fetch_assoc($cityResult);
+                            $city = $rowCity['city'];
+
+                            $dateTime = new DateTime($row['wedding_date']);
+                            $formattedDate = $dateTime->format('jS M Y');
+                            
+                            $dateTime = new DateTime($row['date_of_booking']);
+                            $bookingDate = $dateTime->format('jS M Y \a\t g:i A');
+
+                            echo '<div class="couple-data">
+                                <div class="wedd-details">
+                                    <div class="wedd-name">' . $row["groom_name"] . '</div>
+                                    <div class="child-of">Son of</div>
+                                    <div class="wedd-parent">' . $row["groom_parent"] . '</div>
+                                </div>
+                                <div class="weds">WEDS</div>
+                                <div class="wedd-details">
+                                    <div class="wedd-name">' . $row["bride_name"] . '</div>
+                                    <div class="child-of">Daughter of</div>
+                                    <div class="wedd-parent">' . $row["bride_parent"] . '</div>
+                                </div>
+                            </div>
+    
+                            <div class="date-data">
+                            <h4>ON</h4>
+                            <p>' . $formattedDate . ' (' . $city . ')</p>
+                            </div>
+    
+                            <div class="wedding-wrapper">
+    
+                                <div class="venue-data">
+                                    <img src="images/venues/' . $city . '/' . $row['hall_sno'] . '.jpg"  />
+                                </div>
+    
+                                <div class="price-data">
+                                    <table>
+                                        <tr>
+                                            <td class="data-wedding left">Venue Selected:</td>
+                                            <td class="value-wedding">' . $hall[0] . '</td>
+                                        </tr>   
+                                        <tr>
+                                            <td class="data-wedding left">Booked on:</td>
+                                            <td class="value-wedding">' . $bookingDate . '</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-wedding left">Package Chosen:</td>
+                                            <td class="value-wedding">' . $row["package"] . '</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-wedding left">Total Price:</td>
+                                            <td class="value-wedding">₹' . $totalPrice . '/-</td>
+                                        </tr>';
+                                        if($row['payment_due'] != 0){
+                                            echo '
+                                            <tr>
+                                                <td class="data-wedding left">Amount Paid:</td>
+                                                <td class="value-wedding">₹' . $payment_done . '/-</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="data-wedding left">Amount Due:</td>
+                                                <td class="value-wedding">₹' . $payment_due . '/-</td>
+                                            </tr>';
+                                        }
+                                        else{
+                                            echo '
+                                            <tr>
+                                                <td class="data-wedding">Payment Status:</td>
+                                                <td class="value-wedding">Fully paid</td>
+                                            </tr>';
+                                        }
+                                    echo '</table>
+                                
+                                </div>
+                            </div>';
+                        }
+                        echo '</div>';
+                    }
+            }
+            ?>
             <div class="info">
                 <h3>out-of-this-world weddings</h3>
-                <div class="title-dash"></div>
-                <p>Ever dreamed of exchanging vows on a sun-kissed private beach, or hosting your reception at exquisite
-                    venues? With a choice of opulent ballrooms, breathtaking outdoor venues and iconic settings to say
+                <div class="title-dash" style="width:30rem;"></div>
+                <p>Ever dreamed of exchanging vows on a sun-kissed private beach, or hosting your reception at
+                    exquisite
+                    venues? With a choice of opulent ballrooms, breathtaking outdoor venues and iconic settings
+                    to say
                     ‘I
-                    do’, Planned Weddings brings your dream wedding to life. Menus from world-class chefs, contemporary
-                    accommodation options for your guests, and a host of luxury extras make this one of India's finest
+                    do’, Planned Weddings brings your dream wedding to life. Menus from world-class chefs,
+                    contemporary
+                    accommodation options for your guests, and a host of luxury extras make this one of India's
+                    finest
                     and
-                    most sought-after wedding destination. Getting married in India has never been more carefree. Let
+                    most sought-after wedding destination. Getting married in India has never been more
+                    carefree. Let
                     our
-                    team of dedicated wedding specialists take care of every detail, so you can enjoy the most important
+                    team of dedicated wedding specialists take care of every detail, so you can enjoy the most
+                    important
                     day
                     of your life.</p>
             </div>
@@ -145,8 +267,10 @@
             <div class="info" style="margin-bottom: 10rem;">
                 <h3>The Perfect Venue</h3>
                 <div class="title-dash" style="width:25rem;"></div>
-                <p>From bespoke celebrations for 10 people to show-stopping weddings for 2,000 guests, Planned Weddings
-                    offers incredible venues for your big day. All you need to do is choose the type and place of the
+                <p>From bespoke celebrations for 10 people to show-stopping weddings for 2,000 guests, Planned
+                    Weddings
+                    offers incredible venues for your big day. All you need to do is choose the type and place
+                    of the
                     kind
                     of wedding you like the most and we will cover you the best way possible.</p>
 
@@ -155,7 +279,8 @@
                         style="background:url(images/venue-home-main.jpg) no-repeat;width:90%;margin:auto;display:flex;border-radius:1.5rem;">
                         <div class="div-left venue-detail" style="margin-left: -40%;margin-top: 10rem;">
                             <div class="content" style="width:55rem;">
-                                <h3 style="padding:1rem;padding-bottom:.5rem;font-size:3.2rem;">Plan your dream wedding
+                                <h3 style="padding:1rem;padding-bottom:.5rem;font-size:3.2rem;">Plan your dream
+                                    wedding
                                 </h3>
                                 <p style="margin-top:0;">Contact our team of dedicated wedding specialists for a
                                     tailored proposal.</p>
@@ -441,6 +566,7 @@
             },
         },
     });
+
     </script>
 </body>
 

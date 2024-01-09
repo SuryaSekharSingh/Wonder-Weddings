@@ -101,22 +101,6 @@ section{
     transition: .2s linear;
 }
 
-/* .logo{
-    color:var(--red);
-    font-size:3.5rem;
-    text-transform:capitalize;
-    font-weight: 900;
-    text-align: center;
-    text-decoration: none;
-    transition: .2s linear;
-    margin-left: 1rem;
-} */
-
-/* .logo:hover{
-    transform:scale(1.02,1.02);
-    text-shadow: 1rem solid var(--pure-black);
-} */
-
 .header{    
     display: flex;
     min-height: 8rem;
@@ -125,9 +109,6 @@ section{
     text-transform:capitalize;
     position:sticky;
     top:0;
-    /* background-color: red;
-    position: sticky;
-    top: 0px; */
     
 }
 
@@ -325,17 +306,7 @@ section{
     text-transform: capitalize;
     font-size: 4.5rem;
     color:var(--blue);
-    
 }
-
-.title-dash{
-    background-color: var(--blue);
-    height:.5rem;
-    width:50rem;
-    margin:auto;
-    border-radius: 1rem;
-}
-
 .home .info p{
     padding:0 2rem;
     padding-bottom: 2rem;
@@ -350,41 +321,165 @@ section{
     color:var(--black);
 }
 
-/* .home .venue-home{
-    background-image:url(../images/Venue-home1.jpg) no-repeat;
-    margin:auto;
-    width:100rem;
-    height:70rem;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-} */
-/* 
-.home .venue-home .content{
-    background-color: var(--transparent-white);
-    backdrop-filter: blur(.5rem);
-    text-align: center;
-    height:18rem;
-    display:block;
+@media(max-width:590px){
+    .home .info h3{
+        font-size: 3rem;
+    }
+}
+@media(max-width:420px){
+    .home .info h3{
+        font-size: 2.5rem;
+    }
+    .home .info p{
+        font-size:1.2rem;
+        width:90%;
+    }
 }
 
-.home .venue-home .content h3{
-    
-    font-size:3rem;
+.title-dash{
+    background-color: var(--blue);
+    height:.5rem;
+    width:50rem;
+    margin:auto;
+    border-radius: 1rem;
+}
+
+.home .wedding-container{
+    background: var(--transparent-white);
+    backdrop-filter: blur(1rem);
+    border-radius: 2rem;
+    margin: 5rem auto;
+    padding: 2rem 0;
+    box-shadow: var(--box-shadow);
+}
+
+.home .wedding-container h3{
+    padding: 2rem;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    text-transform: capitalize;
+    font-size: 4.5rem;
+    color: var(--blue);
+    text-align: center;
+}
+
+.home .wedding-container .couple-data{
+    display:flex;
+    flex-direction: row;
+    /* width:60rem; */
+    margin:auto;
+    justify-content: space-evenly;
+    margin-top: 4rem;
+}
+.home .wedding-container .couple-data .wedd-details{
+    display:flex;
+    flex-direction: column;
+}
+.home .wedding-container .couple-data .wedd-details .wedd-name{
+    font-size: 3rem;
+    color:var(--red);
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+}
+.home .wedding-container .couple-data .wedd-details .child-of{
+    font-size: 1.3rem;
     color:var(--pure-black);
+    text-align: center;
+}
+.home .wedding-container .couple-data .wedd-details .wedd-parent{
+    font-size: 2.2rem;
+    text-transform: capitalize;
+    color:var(--pure-black);
+    text-align: center;
+    font-weight: 900;
+}
+.home .wedding-container .couple-data .weds{
+    font-size: 2rem;
+    margin-left: 3rem;
+    padding:0 2rem;
+    padding-top: .5rem;
+    color:var(--blue);
+}
+@media(max-width:610px){
+    .home .wedding-container .couple-data .wedd-details .wedd-name{
+        font-size: 2rem;
+    }
+    .home .wedding-container .couple-data .wedd-details .child-of{
+        font-size:1.1rem;
+    }
+    .home .wedding-container .couple-data .wedd-details .wedd-parent{
+        font-size: 1.4rem;
+    }
+}
+@media(max-width:450px){
+    .home .wedding-container .couple-data .wedd-details .wedd-name{
+        font-size: 1.3rem;
+    }
+    .home .wedding-container .couple-data .wedd-details .child-of{
+        font-size:.9rem;
+    }
+    .home .wedding-container .couple-data .wedd-details .wedd-parent{
+        font-size: 1rem;
+    }
+}
+
+
+.home .wedding-container .date-data{
+    text-align: center;
+}
+.home .wedding-container .date-data h4{
+    font-size: 2.5rem;
+    color:var(--red);
+    font-weight: 900;
+}
+.home .wedding-container .date-data p{
+    font-size: 3rem;
+    color:var(--blue);
+}
+
+.home .wedding-container .wedding-wrapper{
+    margin: 2rem auto;
+    display:flex;
+    flex-direction: row;
+    /* width:60%; */
+    justify-content: space-around;
+}
+.home .wedding-container .wedding-wrapper .venue-data img{
+    width:35rem;
+    height:23rem;
+    /* margin-top: 2rem; */
+}
+.home .wedding-container .wedding-wrapper table td{
+    padding:.5rem 2rem;
+}
+.home .wedding-container .wedding-wrapper table .left{
+    text-align: right;
+}
+.home .wedding-container .wedding-wrapper  .data-wedding{
+    font-size: 1.7rem;
     font-weight: 900;
     text-transform: capitalize;
 }
-
-.home .venue-home .content p{
-    padding-left:2rem;
+.home .wedding-container .wedding-wrapper  .value-wedding{
     font-size: 2rem;
-
+    font-weight: 900;
+    text-transform: uppercase;
 }
-
-.home .venue-home .content .button{
-    margin-left: 2rem;
-} */
+@media(max-width:850px){
+    .home .wedding-container .wedding-wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media(max-width:500px){
+    .home .wedding-container .wedding-wrapper  .data-wedding{
+        font-size: 1rem;
+    }
+    .home .wedding-container .wedding-wrapper  .value-wedding{
+        font-size: 1.2rem;
+    }
+}
 
 .services{
     background-color: var(--transparent-white);
@@ -396,16 +491,9 @@ section{
 }
 
 .services .service-slider{
-    /* padding:1rem;  */
     border-radius:1rem;
     margin-bottom: 4rem;
-
 }
-
-/* .services .swiper-wrapper{
-    width:90%;
-    margin:auto;
-} */
 
 .services .slide {
     height:35rem;
@@ -511,7 +599,11 @@ section{
     font-size: 4.5rem;
     color:var(--blue);
 }
-
+@media(max-width:480px){
+    .portfolio .portfolio-info h3{
+        font-size: 3rem;
+    }
+}
 .portfolio .portfolio-info p{
     font-size: 1.5rem;
     padding-bottom: 1.5rem;

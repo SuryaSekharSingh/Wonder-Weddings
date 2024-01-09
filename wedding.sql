@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2024 at 07:09 PM
+-- Generation Time: Jan 09, 2024 at 05:17 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -74,9 +74,10 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`id`, `user_id`, `groom_name`, `bride_name`, `groom_parent`, `bride_parent`, `contact`, `email`, `hall_sno`, `wedding_date`, `date_of_booking`, `package`, `payment_done`, `payment_due`) VALUES
-(1, 1, 'Manav Sheth', 'Kamini Kumari', 'who cares', 'who cares', '8825238173', 'suryasekharsingh00@gmail.com', 20, '2023-12-25', '2023-10-30 18:51:38', 'absolute', '2000000', '0'),
+(1, 1, 'Manav Sheth', 'Kamini Kumari', 'Pro Sheth', 'Lolo Kumar', '8825238173', 'suryasekharsingh00@gmail.com', 20, '2023-12-25', '2023-10-30 18:51:38', 'absolute', '2000000', '0'),
 (2, 5, 'Tom Ellis', 'lauren german', 'god', 'penelope', '8825238173', 'suryasekharsingh00@gmail.com', 28, '2023-11-11', '2023-10-31 16:58:38', 'absolute', '1550000', '450000'),
-(5, 3, 'Rascal Sharma', 'Buddhi Kumari', 'Rascal Sr.', 'Buddhi Pro', '1111111111', 'rascal@gmail.com', 11, '2023-12-12', '2023-12-08 20:33:56', 'premium', '300000', '150000');
+(5, 3, 'Rascal Sharma', 'Buddhi Kumari', 'Rascal Sr.', 'Buddhi Pro', '1111111111', 'rascal@gmail.com', 11, '2023-12-12', '2023-12-08 20:33:56', 'premium', '300000', '150000'),
+(8, 3, 'Raghav Mishra', 'Aditi Kumari', 'Saurav Mishra', 'Pradeep Pandit', '2323232323', 'samay@gmail.com', 8, '2024-01-26', '2024-01-09 14:07:54', 'ultimate', '0', '900000');
 
 -- --------------------------------------------------------
 
@@ -460,7 +461,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `contact`
