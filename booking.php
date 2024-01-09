@@ -288,7 +288,7 @@ if(isset($_GET['hall_sno'])){
         element.addEventListener("click", (e) => {
 
             dateClickTracker = e.target.innerText.trim();
-            if (dateClickTracker != "") {
+            if (dateClickTracker != "" && !e.target.classList.contains('cal-date-booked')) {
                 var checkedDate = year + "-" + (cm + 1).toString().padStart(2, '0') + "-" + dateClickTracker;
                 dateInput.value = checkedDate;
             }
